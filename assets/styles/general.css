@@ -6,12 +6,7 @@ body {
     position: relative;
 }
 
-.section {
-    min-height: 500px;
-    padding: 50px 30px;
-}
-
-/* template for all navbar facilities */
+/*Navbar classes*/
 .navbar-custom {
     background-color: #F8F8F8;
     border-color: #E7E7E7;
@@ -95,7 +90,47 @@ body {
     }
 }
 
-/*cookies*/
+/*Hero section classes*/
+.hero {
+    height: 100vh;
+    background-image: url("../images/exemlary-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-text {
+    color: white;
+}
+
+/*Section classes*/
+.section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 50px 30px;
+    box-shadow: 5px 5px 30px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-inner-header {
+    margin-top: 15px;
+}
+
+/*Cookies*/
 #cookieinfo * {
     margin: 0px;
     padding: 0px;
