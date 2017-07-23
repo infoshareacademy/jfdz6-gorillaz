@@ -3,7 +3,7 @@
  * Edited by wojtrawi on 2017-07-21.
  */
 // If cookie is empty
-if (!document.cookie) {
+if (!document.cookie.match(/entryDate/)) {
     // Make container for cookie message
     var container = document.createElement('div');
     container.setAttribute('id', 'cookieinfo');
