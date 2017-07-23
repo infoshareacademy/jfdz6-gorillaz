@@ -18,11 +18,12 @@ if (!document.cookie) {
     link.addEventListener('click', function (event) {
         event.preventDefault();
         document.body.removeChild(container);
+        // Set cookie
+        var entryDate = new Date();
+        document.cookie = "entryDate" + "=" + entryDate;
     });
     // Add link to container and container to body
     container.appendChild(link);
     document.body.appendChild(container);
-    // Set cookie
-    var entryDate = new Date();
-    document.cookie = "entryDate" + "=" + entryDate;
+
 }
