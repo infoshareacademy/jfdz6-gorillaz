@@ -181,3 +181,31 @@ body {
 #cookieinfo a:hover {
     background-color: #4cb4ff;
 }
+
+.container-fluid.footer {
+    background-color: #222;
+    height: 20%;
+
+}
+
+.footer-text {
+    color: white;
+    float: right;
+    padding-right: 20%;
+}
+
+
+
+.footer-info {
+    width: 70%;
+    float: left;
+    line-height: 102px;
+
+}
+
+.socialmedia {
+    width: 30%;
+    float: left;
+    line-height: 102px;
+}
+
