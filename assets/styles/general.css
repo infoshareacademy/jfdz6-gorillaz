@@ -88,12 +88,51 @@ body {
     .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #333;
     }
+    #bgvid {
+        display: none;
+    }
+
+    .hero {
+        background: url("../images/background_mobile.jpg") no-repeat
+    }
+    #cookieinfo .cookie_monster {
+        display: none;
+    }
+
 }
 
 /*Hero section classes*/
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    z-index: -100;
+    /*-ms-transform: translateX(-50%) translateY(-50%);*/
+    /*-moz-transform: translateX(-50%) translateY(-50%);*/
+    /*-webkit-transform: translateX(-50%) translateY(-50%);*/
+    transform: translateX(-50%) translateY(-55%);
+    /*background: url("../images/background_mobile.jpg") no-repeat;*/
+    background-size: cover;
+}
+
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
 .hero {
     height: 100vh;
-    background-image: url("../images/exemlary-hero.jpg");
+    width: 100%;
+    /*background-image: url("../images/background_mobile.jpg");*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -116,8 +155,8 @@ body {
 
 /*Section classes*/
 .section {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 60px;
+    /*margin-bottom: 50px;*/
     padding: 50px 30px;
     box-shadow: 5px 5px 30px;
 }
