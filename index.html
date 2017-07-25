@@ -15,14 +15,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--favicon-->
+    <!--Favicon-->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="70">
 <!--Header section-->
 <header>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -46,15 +46,13 @@
 <!--Main section-->
 <main>
     <!--Hero section-->
-    <section class="container hero" id="intro">
-        <div class="video">
-            <video autoplay muted loop id="bgvid">
-                <source src="assets/video/film.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <h1 class="hero-text">Tysiące zadowolonych osób, które otrzymały nasze życzenia!</h1>
-                <a href="#generator" class="btn btn-primary btn-lg">Generuj życzenia!</a>
-            </div>
+    <section class="hero" id="intro">
+        <video class="hero-background" autoplay muted loop>
+            <source src="assets/video/background-movie.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1 class="hero-text">Tysiące zadowolonych osób, które otrzymały nasze życzenia!</h1>
+            <a href="#generator" class="btn btn-primary btn-lg">Generuj życzenia!</a>
         </div>
     </section>
     <!--About section-->
@@ -111,7 +109,7 @@
                         fuga maiores saepe sapiente similique totam voluptatibus. Aut cum ex nisi perspiciatis sequi,
                         tenetur ut. Natus, nemo.</p>
                     <p>
-                        <button type="button" class="btn btn-info">Napisz wiadomość</button>
+                        <button type="button" class="btn btn-primary">Napisz wiadomość</button>
                     </p>
                 </div>
             </div>
@@ -124,7 +122,7 @@
                         fuga maiores saepe sapiente similique totam voluptatibus. Aut cum ex nisi perspiciatis sequi,
                         tenetur ut. Natus, nemo.</p>
                     <p>
-                        <button type="button" class="btn btn-info">Napisz wiadomość</button>
+                        <button type="button" class="btn btn-primary">Napisz wiadomość</button>
                     </p>
                 </div>
             </div>
@@ -137,7 +135,7 @@
                         fuga maiores saepe sapiente similique totam voluptatibus. Aut cum ex nisi perspiciatis sequi,
                         tenetur ut. Natus, nemo.</p>
                     <p>
-                        <button type="button" class="btn btn-info">Napisz wiadomość</button>
+                        <button type="button" class="btn btn-primary">Napisz wiadomość</button>
                     </p>
                 </div>
             </div>
@@ -150,7 +148,7 @@
                         fuga maiores saepe sapiente similique totam voluptatibus. Aut cum ex nisi perspiciatis sequi,
                         tenetur ut. Natus, nemo.</p>
                     <p>
-                        <button type="button" class="btn btn-info">Napisz wiadomość</button>
+                        <button type="button" class="btn btn-primary">Napisz wiadomość</button>
                     </p>
                 </div>
             </div>
@@ -162,7 +160,7 @@
         <div class="row">
             <div class="col-sm-5">
                 <div class="text-center">
-                    <img src="assets/images/i-want-you-uncle-sam-clipart-1.jpg" alt="i want you image" height="200">
+                    <img src="assets/images/message-prompt.jpg" alt="i want you image" height="200">
                 </div>
                 <p>Skontaktuj się z nami a odezwiemy się do Ciebie w przeciągu 24h.</p>
                 <p><span class="glyphicon glyphicon-map-marker"></span> Gdańsk, Poland</p>
@@ -201,16 +199,32 @@
     </section>
 </main>
 <!--Footer section-->
-<footer class="container-fluid footer text-center">
-    <div >
-        <div class="footer-info">
-            <p class="footer-text">All rights reserved</p>
+<footer class="container-fluid footer">
+    <div class="row text-center">
+        <div class="col-sm-8">
+            <div class="footer-info">
+                <p>All rights reserved</p>
+            </div>
         </div>
-        <div class="socialmedia">
-            <a href="#"><img src="assets/images/facebook-logo-png-white-facebook-logo-png-white-facebook-icon-png--32.png" alt="cos" height="50" width="50" class="facebook"></a>
-            <a href="#"><img src="assets/images/TWITTER.png" alt="cos" height="50" width="50" class="facebook"></a>
-            <a href="#"><img src="assets/images/YouTube-logo-light.png" alt="cos" height="50" width="50" class="facebook"></a>
-            <a href="#"><img src="assets/images/instagram.png" alt="cos" height="50" width="50" class="facebook"></a>
+        <div class="col-sm-1">
+            <a href="#">
+                <img src="assets/images/Facebook-logo.png" alt="Facebook logo">
+            </a>
+        </div>
+        <div class="col-sm-1">
+            <a href="#">
+                <img src="assets/images/Twitter-logo.png" alt="Twitter logo">
+            </a>
+        </div>
+        <div class="col-sm-1">
+            <a href="#">
+                <img src="assets/images/You-Tube-logo.png" alt="You Tube logo">
+            </a>
+        </div>
+        <div class="col-sm-1">
+            <a href="#">
+                <img src="assets/images/Instagram-logo.png" alt="Instagram logo">
+            </a>
         </div>
     </div>
 </footer>
