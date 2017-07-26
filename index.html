@@ -78,6 +78,47 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi corporis debitis deleniti dicta dolorum
             ducimus error eveniet, expedita explicabo inventore ipsum minima mollitia nesciunt possimus repellendus
             repudiandae totam voluptates!</p>
+        <!--Select wishes type-->
+        <h4 class="section-inner-header">Wybierz rodzaj życzeń</h4>
+        <div class="radio">
+            <label>
+                <input type="radio" name="wishes-type" value="traditional">
+                Utwórz życzenia na tradycyjne okazje
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="wishes-type" value="funny">
+                Generuj życzenia z okazji dzisiejszego zabawnego święta
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="wishes-type" value="custom">
+                Stwórz autorskie życzenia
+            </label>
+        </div>
+        <!--Select occasion (only for traditional wishes)-->
+        <h4 class="section-inner-header">Wybierz okazję</h4>
+        <select class="form-control">
+            <option>Urodziny</option>
+            <option>Ślub</option>
+            <option>Walentynki</option>
+            <option>Wielkanoc</option>
+            <option>Boże Narodzenie</option>
+        </select>
+        <!--Select background color-->
+        <h4 class="section-inner-header">Wybierz kolor tła</h4>
+        <input type="color" class="form-control" id="background-color">
+        <!--Drawing area-->
+        <div class="canvas-wrapper">
+            <canvas id="myCanvas">
+                Your browser does not support the HTML5 canvas tag.
+            </canvas>
+        </div>
+        <!--Download button-->
+        <a href='#' class="btn btn-primary" id="download-canvas" download="greeting-card">Pobierz swoją kartkę z
+            życzniami!</a>
     </section>
     <!--FAQ section-->
     <section class="container section" id="FAQ">
@@ -231,5 +272,7 @@
 <!--Scripts-->
 <script src="assets/scripts/smooth-scrolling.js"></script>
 <script src="assets/scripts/cookies.js"></script>
+<script src="assets/scripts/fabric.min.js"></script>
+<script src="assets/scripts/greeting-card.js"></script>
 </body>
 </html>

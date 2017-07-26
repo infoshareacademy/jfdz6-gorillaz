@@ -114,6 +114,17 @@ body {
     margin-top: 15px;
 }
 
+/*Canvas*/
+
+.canvas-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#myCanvas {
+    border: 1px solid black;
+}
+
 /*Cookies*/
 
 #cookie * {
