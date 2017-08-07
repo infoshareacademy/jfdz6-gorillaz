@@ -214,7 +214,7 @@ body {
 
 /*Counter*/
 
-.count {
+.counter {
     font-size: 75px;
     font-weight: 900;
     color: #3d5cff;
@@ -222,6 +222,6 @@ body {
     width: auto;
 }
 
-.count-text{
+.counter-text{
     text-align: center;
 }

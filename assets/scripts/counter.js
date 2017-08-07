@@ -21,7 +21,7 @@ function Scrolled() {
 
         if (!prevVisible && visible) {
             if(!exec){
-                $('.count').each(function() {
+                $('.counter').each(function() {
                     $(this).prop('Counter', 0).animate({
                         Counter: $(this).text()
                     }, {
