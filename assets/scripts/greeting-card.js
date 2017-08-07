@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Add initial greeting card
-    var myCanvas = new fabric.Canvas('myCanvas', {
+    var myCanvas = new fabric.Canvas('drawing-area', {
         backgroundColor: 'yellow'
     });
     myCanvas.setWidth($('.canvas-wrapper').width());
