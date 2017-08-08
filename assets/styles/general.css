@@ -7,21 +7,19 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-/*Navbar classes*/
+/*Header section classes*/
 
 .navbar-custom {
     background-color: rgba(61, 92, 255, 0.95);
     border-color: #3d5cff;
 }
 
-/* Title and Link */
-
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a {
     color: white;
     font-weight: 600;
     letter-spacing: 1.5px;
-    font-family: "Gloria Hallelujah";
+    font-family: "Gloria Hallelujah", cursive;
 }
 
 .navbar-custom .navbar-brand:hover,
@@ -39,8 +37,6 @@ body {
     background-color: white;
 }
 
-/* Mobile version */
-
 .navbar-custom .navbar-toggle {
     border-color: white;
 }
@@ -54,24 +50,32 @@ body {
     background-color: white;
 }
 
-/*Button classes*/
-
-.btn {
-    font-family: "Gloria Hallelujah";
-}
-
-/*Logo classes*/
-
-.logo {
-    font-size: 75px;
-    color:green;
-}
 /*Hero section classes*/
 
 .hero {
     height: 100vh;
     position: relative;
     overflow: hidden;
+}
+
+
+.hero-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+.hero-text {
+    color: white;
 }
 
 @media (max-width: 767px) {
@@ -88,65 +92,98 @@ body {
     }
 }
 
-.hero-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: "Gloria Hallelujah";
-}
-
-.hero-text {
-    color: white;
-}
-
 /*Section classes*/
 
 .section {
     padding: 50px 30px;
 }
 
-.section:not(:last-child){
+.section:not(:last-child) {
     border-bottom: 1px solid darkgrey;
 }
 
 .section-header {
     margin-bottom: 50px;
+    color: #ff6f2f;
+    font-size: 3em;
+    /*TODO select font for sections' headers*/
     font-family: Century Gothic, sans-serif;
     font-weight: bold;
-    color: #ff6f2f;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 5px;
 }
 
 .section-inner-header {
-    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
 }
 
-.section-image {
-    max-height: 150px;
+.section p {
+    font-size: 1em;
 }
 
-/*Canvas*/
+.section-logo {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+@media (max-width: 767px) {
+    .section-inner-header, .section p {
+        text-align: center;
+    }
+}
+
+/*Generator section classes*/
 
 .canvas-wrapper {
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-#myCanvas {
+#canvas {
     border: 1px solid black;
 }
 
-/*Cookies*/
+/*Authors section classes*/
+
+.author-img {
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/*Footer section classes*/
+
+.footer {
+    background-color: #222;
+    margin-top: 60px;
+}
+
+.footer .row {
+    padding: 15px;
+}
+
+.footer-info {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer img {
+    width: 50px;
+    height: 50px;
+}
+
+/*CUSTOM classes*/
+
+.btn {
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+/*Cookies classes*/
 
 #cookie * {
     margin: 0;
@@ -212,23 +249,4 @@ body {
     }
 }
 
-/*Footer*/
 
-.footer {
-    background-color: #222;
-    margin-top: 60px;
-}
-
-.footer .row {
-    padding: 15px;
-}
-.footer-info {
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-}
-
-.footer img {
-    width: 50px;
-    height: 50px;
-}
