@@ -218,10 +218,11 @@ body {
     font-size: 75px;
     font-weight: 900;
     color: #3d5cff;
-    margin: auto;
-    width: auto;
+    visibility: hidden;
+    /*margin: auto;*/
+    /*width: auto;*/
 }
 
 .counter-text{
-    text-align: center;
+    /*text-align: center;*/
 }
