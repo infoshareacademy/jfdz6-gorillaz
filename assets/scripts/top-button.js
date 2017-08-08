@@ -4,24 +4,23 @@
 // When the user scrolls down 20px from the top of the document, show the button
 
 $(document).ready(function () {
-    $("#my-Btn").click(topFunction)
-    {
 
-        window.onscroll = function () {
-            scrollFunction()
-        };
+    // Monitor scroll position
+    checkScrollPosition();
+    $(window).on('resize, scroll', checkScrollPosition);
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("my-Btn").style.display = "block";
-            } else {
-                document.getElementById("my-Btn").style.display = "none";
-            }
+    // Move to page top
+    $("#nav-button").click(moveToTop);
+
+    function checkScrollPosition() {
+        if ($('body').scrollTop() > 20) {
+            $("#nav-button").show();
+        } else {
+            $("#nav-button").hide();
         }
     }
+
+    function moveToTop() {
+        $('body').scrollTop(0);
+    }
 });
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0; // For Chrome, Safari and Opera
-    document.documentElement.scrollTop = 0; // For IE and Firefox
-}

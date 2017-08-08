@@ -214,8 +214,7 @@ body {
 
 /*top-button*/
 
-
-#my-Btn {
+#nav-button {
     display: none;
     position: fixed;
     bottom: 15px;
@@ -231,6 +230,6 @@ body {
     font-weight: bold;
 }
 
-#my-Btn:hover {
+#nav-button:hover {
     color: #ff6f2f
 }
