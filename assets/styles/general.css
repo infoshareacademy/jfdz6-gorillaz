@@ -68,7 +68,6 @@ a.navbar-brand {
     overflow: hidden;
 }
 
-
 .hero-background {
     width: 100%;
     height: 100%;
@@ -131,6 +130,10 @@ a.navbar-brand {
 
 .section p {
     font-size: 1em;
+}
+
+.section span {
+    font-weight: 900;
 }
 
 .section-logo {
@@ -259,9 +262,7 @@ a.navbar-brand {
     }
 }
 
-
-
-/*top-button*/
+/*Top-button*/
 
 #nav-button {
     display: none;
@@ -281,4 +282,13 @@ a.navbar-brand {
 
 #nav-button:hover {
     color: #ff6f2f
+}
+
+/*Counter classes*/
+
+.counter {
+    font-size: 75px;
+    font-weight: 900;
+    color: #3d5cff;
+    visibility: hidden;
 }
