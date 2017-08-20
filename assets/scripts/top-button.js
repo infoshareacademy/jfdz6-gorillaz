@@ -8,12 +8,7 @@ $(document).ready(function () {
     var scrollDuration = 800;
     var showNavButtonThreshold = 20;
 
-    // Monitor scroll position
-
     $(window).on('resize, scroll', checkScrollPosition);
-
-    // Move to page top
-
 
     function checkScrollPosition() {
         if ($(window).scrollTop() > showNavButtonThreshold) {
