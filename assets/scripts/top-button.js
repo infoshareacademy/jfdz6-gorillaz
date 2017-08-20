@@ -4,23 +4,29 @@
 // When the user scrolls down 20px from the top of the document, show the button
 
 $(document).ready(function () {
+    var $navButton = $("#nav-button");
+    var scrollDuration = 800;
+    var showNavButtonThreshold = 20;
 
     // Monitor scroll position
-    checkScrollPosition();
+
     $(window).on('resize, scroll', checkScrollPosition);
 
     // Move to page top
-    $("#nav-button").click(moveToTop);
+
 
     function checkScrollPosition() {
-        if ($('body').scrollTop() > 20) {
-            $("#nav-button").show();
+        if ($(window).scrollTop() > showNavButtonThreshold) {
+            $navButton.show();
         } else {
-            $("#nav-button").hide();
+            $navButton.hide();
         }
     }
 
     function moveToTop() {
-        $('body').scrollTop(0);
+        $('html, body').animate({scrollTop:0}, scrollDuration);
     }
+
+    $navButton.click(moveToTop);
+    checkScrollPosition();
 });
