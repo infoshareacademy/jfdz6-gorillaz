@@ -168,6 +168,13 @@ a.navbar-brand {
     margin: 0 auto;
 }
 
+/*Contact section*/
+
+#status {
+    display: none;
+    color: green;
+}
+
 /*Footer section classes*/
 
 .footer {
@@ -190,10 +197,18 @@ a.navbar-brand {
     height: 50px;
 }
 
-/*CUSTOM classes*/
+/*Buttons*/
 
 .btn {
     font-family: "Gloria Hallelujah", cursive;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:active, .btn-primary:focus  {
+    background-color: #3d5cff;
+}
+
+.btn-primary:hover{
+    color: #ff6f2f;
 }
 
 /*Cookies classes*/
@@ -257,7 +272,7 @@ a.navbar-brand {
 }
 
 @media (max-width: 767px) {
-    #cookie-info .cookie-monster {
+    #cookie .cookie-monster {
         display: none;
     }
 }
@@ -272,7 +287,7 @@ a.navbar-brand {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #3f79ff;
+    background-color: #3d5cff;
     color: white;
     cursor: pointer;
     padding: 15px;
