@@ -52,13 +52,13 @@ $(document).ready(function () {
     function changeWishes(wishType) {
         switch (wishType) {
             case 'traditional':
-                canvasContent('Happy Valentines Day!', 'Happy\nValentines Day!', 'assets//images/heart.png');
+                canvasContent('Happy Valentines Day!', 'Happy\nValentines Day!', 'assets//images/generator/heart.png');
                 break;
             case 'funny':
-                canvasContent('Have a great pizza day!', 'Happy\npizza day!', 'assets//images/pizza-slice.png');
+                canvasContent('Have a great pizza day!', 'Happy\npizza day!', 'assets//images/generator/pizza-slice.png');
                 break;
             case 'custom':
-                canvasContent('Have a great celebration of your own!', 'Have a\n happy celebration!', 'assets//images/sun.png');
+                canvasContent('Have a great celebration of your own!', 'Have a\n happy celebration!', 'assets//images/generator/sun.png');
                 break;
         }
     }
