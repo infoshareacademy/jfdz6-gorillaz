@@ -1,33 +1,25 @@
-/**
- * Created by piotrek on 2017-07-18.
- * Edited by wojtrawi on 2017-07-21.
- */
-// If cookie is empty
-if (!document.cookie.match(/entryDate/)) {
-    // Make container for cookie message
-    var container = document.createElement('div');
-    container.setAttribute('id', 'cookie');
-    container.innerHTML = '<h6 class="cookie-alert">Ta strona wykorzystuje pliki cookie</h6>' +
-        '<img src="assets/images/cookie-monster.png" alt="cookie-monster" class="cookie-monster"/>' +
-        '<p class="cookie-info">Używamy informacji zapisanych za pomocą plików cookies w celu zapewnienia maksymalnej ' +
-        'wygody w korzystaniu ' + 'z naszego serwisu. Jeżeli wyrażasz zgodę na zapisywanie informacji zawartej w cookies' +
-        ' kliknij na x w ' + 'prawym górnym rogu tej informacji. Jeśli nie wyrażasz zgody, ustawienia dotyczące plików' +
-        ' cookies możesz ' + 'zmienić w swojej przeglądarce.</p>';
-    // Make closing link
-    var link = document.createElement('a');
-    link.setAttribute('href', '#');
-    link.setAttribute('title', 'Zamknij');
-    link.innerHTML = 'x';
-    // Add click event listener to link
-    link.addEventListener('click', function (event) {
-        event.preventDefault();
-        document.body.removeChild(container);
-        // Set cookie
-        var entryDate = new Date();
-        document.cookie = "entryDate" + "=" + entryDate;
-    });
-    // Add link to container and container to body
-    container.appendChild(link);
-    document.body.appendChild(container);
+$(document).ready(function () {
+    if (!document.cookie.match(/entryDate/)) {
+        var $cookieBar = $('<div id="cookie"></div>');
+        var $closeBtn = $('<a href="#">x</a>');
 
-}
+        var cookieHeader = 'Me not take cookies, me eat the cookies.';
+        var cookieInfo = 'The cookies we use do not store personally identifiable information nor can they harm your computer.' +
+            'We want our website to be informative, personal, and as user friendly as possible and cookies help us to achieve that goal.' +
+            'By using our website you consent to all cookies in accordance with our Cookie Policy.';
+
+        $cookieBar.append('<h6 class="cookie-alert">' + cookieHeader + '</h6>');
+        $cookieBar.append('<img src="assets/images/cookie-monster.png" alt="cookie-monster" class="cookie-monster"/>');
+        $cookieBar.append('<p class="cookie-info">' + cookieInfo + '</p>');
+        $cookieBar.append($closeBtn);
+
+        $closeBtn.on('click', function (event) {
+            event.preventDefault();
+            $cookieBar.remove();
+            var entryDate = new Date();
+            document.cookie = "entryDate" + "=" + entryDate;
+        });
+
+        $('body').append($cookieBar);
+    }
+});

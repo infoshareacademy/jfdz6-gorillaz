@@ -1,8 +1,10 @@
 $(document).ready(function () {
+    const loadingDuration = 1000;
+    var numbersShown = false;
+
     var $window = $(window);
     var $numbersRow = $('#numbers');
     var $counters = $numbersRow.find('.counter');
-    var numbersShown = false;
 
     function isInViewport(element) {
         var boundingBox = element[0].getBoundingClientRect();
@@ -17,12 +19,12 @@ $(document).ready(function () {
 
     function showNumbers() {
         $counters.each(function () {
-            var $counter =  $(this);
+            var $counter = $(this);
             $counter.css('visibility', 'visible');
             $counter.prop('targetValue', 0).animate({
                 targetValue: $counter.text()
             }, {
-                duration: 2000,
+                duration: loadingDuration,
                 step: function (now) {
                     $counter.text(Math.ceil(now));
                 }
@@ -31,7 +33,7 @@ $(document).ready(function () {
         numbersShown = true;
     }
 
-    $window.scroll(function () {
+    $window.on('scroll', function () {
         if (!numbersShown && isInViewport($numbersRow)) showNumbers();
     });
 

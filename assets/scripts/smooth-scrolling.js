@@ -1,8 +1,9 @@
 $(document).ready(function () {
+    const scrollTime = 500;
+
     var $navItem = $('.navbar a');
     var $heroBtn = $('.hero-content').find('a');
     var $body = $('html, body');
-    var scrollTime = 500;
 
     function scrollSmoothly(event) {
         if (this.hash !== "") {
