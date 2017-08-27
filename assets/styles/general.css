@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    transition: all 0.5s;
 }
 
 body {
@@ -59,6 +60,17 @@ a.navbar-brand {
     width: auto;
     height: 100%;
 }
+nav.shrink .navbar-nav>li>a {
+    padding: 0.5em;
+    transition: all 0.5s;
+}
+
+nav.navbar.shrink {
+    min-height: 0;
+}
+ nav.shrink .navbar-brand {
+     display: none;
+ }
 
 /*Hero section classes*/
 
