@@ -7,12 +7,9 @@ if (!document.cookie.match(/entryDate/)) {
     // Make container for cookie message
     var container = document.createElement('div');
     container.setAttribute('id', 'cookie');
-    container.innerHTML = '<h6 class="cookie-alert">Ta strona wykorzystuje pliki cookie</h6>' +
+    container.innerHTML = '<h6 class="cookie-alert">Me not take cookies, me eat the cookies.</h6>' +
         '<img src="assets/images/cookie-monster.png" alt="cookie-monster" class="cookie-monster"/>' +
-        '<p class="cookie-info">Używamy informacji zapisanych za pomocą plików cookies w celu zapewnienia maksymalnej ' +
-        'wygody w korzystaniu ' + 'z naszego serwisu. Jeżeli wyrażasz zgodę na zapisywanie informacji zawartej w cookies' +
-        ' kliknij na x w ' + 'prawym górnym rogu tej informacji. Jeśli nie wyrażasz zgody, ustawienia dotyczące plików' +
-        ' cookies możesz ' + 'zmienić w swojej przeglądarce.</p>';
+        '<p class="cookie-info">The cookies we use do not store personally identifiable information nor can they harm your computer. We want our website to be informative, personal, and as user friendly as possible and cookies help us to achieve that goal. By using our website you consent to all cookies in accordance with our Cookie Policy.</p>';
     // Make closing link
     var link = document.createElement('a');
     link.setAttribute('href', '#');
