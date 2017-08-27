@@ -7,7 +7,7 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-/*Header section classes*/
+/*Header section*/
 
 .navbar-custom {
     background-color: rgba(61, 92, 255, 0.95);
@@ -60,7 +60,7 @@ a.navbar-brand {
     height: 100%;
 }
 
-/*Hero section classes*/
+/*Hero section*/
 
 .hero {
     height: 100vh;
@@ -84,6 +84,7 @@ a.navbar-brand {
 }
 
 .hero-text {
+    margin-bottom: 20px;
     color: white;
 }
 
@@ -101,7 +102,7 @@ a.navbar-brand {
     }
 }
 
-/*Section classes*/
+/*Section*/
 
 .section {
     padding: 50px 30px;
@@ -115,7 +116,6 @@ a.navbar-brand {
     margin-bottom: 50px;
     color: #ff6f2f;
     font-size: 3em;
-    /*TODO select font for sections' headers*/
     font-family: Century Gothic, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -125,11 +125,13 @@ a.navbar-brand {
 
 .section-inner-header {
     margin-bottom: 15px;
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 .section p {
     font-size: 1em;
+    letter-spacing: 1.5px;
+    line-height: 1.8em;
 }
 
 .section span {
@@ -140,16 +142,20 @@ a.navbar-brand {
     width: 150px;
     height: auto;
     margin: 0 auto;
-    padding: 10px 0;
 }
 
 @media (max-width: 767px) {
     .section-inner-header, .section p {
         text-align: center;
+        line-height: 1.5em;
+    }
+
+    .section-logo {
+        padding: 10px 0;
     }
 }
 
-/*Generator section classes*/
+/*Generator section*/
 
 .canvas-wrapper {
     margin-top: 30px;
@@ -160,12 +166,36 @@ a.navbar-brand {
     border: 1px solid black;
 }
 
-/*Authors section classes*/
+/*Authors section*/
 
 .author-img {
     width: 250px;
     height: auto;
     margin: 0 auto;
+}
+
+@media only screen and (min-width: 800px) {
+
+    .thumbnail {
+        height: 580px;
+        position: relative;
+    }
+
+    .thumbnail .btn {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+    }
+}
+
+/*Contact section*/
+
+#status {
+    display: none;
+    color: green;
+    font-size: 1.2em;
+    letter-spacing: 3px;
 }
 
 /*Footer section classes*/
@@ -190,13 +220,23 @@ a.navbar-brand {
     height: 50px;
 }
 
-/*CUSTOM classes*/
+/*Buttons*/
 
 .btn {
+    border: none;
     font-family: "Gloria Hallelujah", cursive;
+    letter-spacing: 1px;
 }
 
-/*Cookies classes*/
+.btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:active, .btn-primary:focus {
+    background-color: #3d5cff;
+}
+
+.btn-primary:hover {
+    color: #ff6f2f;
+}
+
+/*Cookies*/
 
 #cookie * {
     margin: 0;
@@ -204,28 +244,26 @@ a.navbar-brand {
 }
 
 #cookie {
-    background-color: #3d5cff;
+    background-color: rgba(61, 92, 255, 0.95);
     padding: 20px;
     position: fixed;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 1000;
-    font-size: 12px;
-    font-family: Arial, Verdana, sans-serif;
-    opacity: 0.95;
+    color: white;
+    letter-spacing: 1.2px;
 }
 
 #cookie .cookie-alert {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
-    color: white;
+    text-align: justify;
     margin-bottom: 7px;
 }
 
 #cookie .cookie-info {
-    font-size: 12px;
-    color: white;
+    font-size: 0.8em;
     line-height: 1.5em;
 }
 
@@ -238,7 +276,7 @@ a.navbar-brand {
     right: 10px;
     top: 10px;
     border-radius: 11px;
-    font-size: 12px;
+    font-size: 1em;
     color: black;
     line-height: 22px;
     text-align: center;
@@ -253,16 +291,16 @@ a.navbar-brand {
     height: 200px;
     position: absolute;
     top: -150px;
-    right: 42%;
+    right: 35%;
 }
 
 @media (max-width: 767px) {
-    #cookie-info .cookie-monster {
+    #cookie .cookie-monster {
         display: none;
     }
 }
 
-/*Top-button*/
+/*Top button*/
 
 #nav-button {
     display: none;
@@ -272,7 +310,7 @@ a.navbar-brand {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #3f79ff;
+    background-color: #3d5cff;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -284,7 +322,7 @@ a.navbar-brand {
     color: #ff6f2f
 }
 
-/*Counter classes*/
+/*Counter*/
 
 .counter {
     font-size: 75px;

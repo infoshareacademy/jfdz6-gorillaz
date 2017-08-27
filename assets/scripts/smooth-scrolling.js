@@ -1,29 +1,24 @@
-/**
- * Created by Wojtek on 18.07.2017.
- * Copied from https://www.w3schools.com/bootstrap/bootstrap_theme_company.asp
- */
 $(document).ready(function () {
-    // Add smooth scrolling to all links in navbar + footer link
-    $(".navbar a").on('click', function (event) {
+    const scrollTime = 500;
 
-        // Make sure this.hash has a value before overriding default behavior
+    var $navItem = $('.navbar a');
+    var $heroBtn = $('.hero-content').find('a');
+    var $body = $('html, body');
+
+    function scrollSmoothly(event) {
         if (this.hash !== "") {
-
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
             var hash = this.hash;
+            var $section = $(hash);
 
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (500) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 500, function () {
-
-                // Add hash (#) to URL when done scrolling (default click behavior)
+            event.preventDefault();
+            $body.animate({
+                scrollTop: $section.offset().top
+            }, scrollTime, function () {
                 window.location.hash = hash;
             });
-        } // End if
-    });
+        }
+    }
+
+    $navItem.on('click', scrollSmoothly);
+    $heroBtn.on('click', scrollSmoothly);
 });
