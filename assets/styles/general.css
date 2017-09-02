@@ -106,6 +106,7 @@ a.navbar-brand {
 
 .section {
     padding: 50px 30px;
+
 }
 
 .section:not(:last-child) {
@@ -330,3 +331,4 @@ a.navbar-brand {
     color: #3d5cff;
     visibility: hidden;
 }
+
