@@ -175,18 +175,42 @@ a.navbar-brand {
     margin: 0 auto;
 }
 
-@media only screen and (min-width: 800px) {
+
+.thumbnail a>img{
+    display: inline-block;
+    width: 60px;
+    padding: 5px;
+}
+
+.thumbnail > .author-link-container{
+    margin-bottom: 10px;
+}
+@media only screen and (min-width: 768px) {
 
     .thumbnail {
-        height: 580px;
+        height: 555px;
         position: relative;
     }
 
-    .thumbnail .btn {
+    .thumbnail > .author-link-container,
+    .thumbnail .btn{
+        margin-bottom: 0;
         position: absolute;
         left: 50%;
-        bottom: 20px;
+        bottom: 30px;
         transform: translateX(-50%);
+    }
+
+    .thumbnail > .author-link-container{
+        width: 200px;
+        bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .thumbnail {
+        height: 600px;
     }
 }
 
