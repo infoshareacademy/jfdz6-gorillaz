@@ -306,7 +306,7 @@ a.navbar-brand {
 #nav-button {
     display: none;
     position: fixed;
-    bottom: 15px;
+    bottom: 65px;
     left: 30px;
     z-index: 99;
     border: none;
