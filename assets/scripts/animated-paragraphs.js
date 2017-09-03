@@ -10,16 +10,17 @@ function onScrollInit( items, trigger ) {
             'animation-delay':          osAnimationDelay
         });
 
-        var osTrigger = ( trigger ) ? trigger : osElement;
+        var osTrigger = osElement;
 
         osTrigger.waypoint(function() {
             osElement.addClass('animated').addClass(osAnimationClass);
         },{
             triggerOnce: true,
-            offset: '90%'
+            offset: '95%'
         });
     });
 }
 
-onScrollInit( $('.os-animation') );
-onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
+// onScrollInit( $('#about p') );
+// onScrollInit( $('#faq p') );
+onScrollInit( $('.staggered-animation') );
