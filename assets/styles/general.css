@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    transition: all 0.5s;
 }
 
 body {
@@ -101,6 +102,8 @@ a.navbar-brand {
         display: none;
     }
 }
+
+
 
 /*Section*/
 
@@ -360,3 +363,18 @@ a.navbar-brand {
     visibility: hidden;
 }
 
+
+/* shrink navbar */
+
+
+nav.shrink .navbar-nav>li>a {
+    padding: 0.5em;
+    transition: all 0.5s;
+}
+
+nav.navbar.shrink {
+    min-height: 0;
+}
+nav.shrink .navbar-brand {
+    display: none;
+}
