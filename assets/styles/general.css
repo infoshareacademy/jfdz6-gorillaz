@@ -103,8 +103,6 @@ a.navbar-brand {
     }
 }
 
-
-
 /*Section*/
 
 .section {
@@ -377,4 +375,10 @@ nav.navbar.shrink {
 }
 nav.shrink .navbar-brand {
     display: none;
+}
+
+/*animated paragraphs*/
+
+.staggered-animation{
+    opacity:0;
 }

@@ -9,9 +9,15 @@
     <link rel="stylesheet" href="assets/styles/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/general.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/animate.css/3.1.0/animate.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.4/waypoints.min.js"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <style>
         @font-face {
@@ -68,7 +74,7 @@
         </div>
     </section>
 
-    <section class="container section " id="about">
+    <section class="container section staggered-animation-container" id="about">
         <h2 class="section-header">Get to know us better</h2>
 
         <div class="row">
@@ -79,7 +85,7 @@
             <div class="col-sm-9 col-sm-pull-3 text-right">
                 <h4 class="section-inner-header">Are you tired with all those boring wishes? Then you are in the right
                     place!</h4>
-                <p>How many times did you sing the same old song? How many times did you give the same lame greeting
+                <p class="staggered-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.3s">How many times did you sing the same old song? How many times did you give the same lame greeting
                     card to your Nanny? It's high time to change that! With our fancy app you can generate original and
                     awesome wishes!</p>
             </div>
@@ -92,7 +98,7 @@
 
             <div class="col-sm-9 text-left">
                 <h4 class="section-inner-header">Are you fed up with all those ordinary celebrations? Try new ones!</h4>
-                <p>Have you heard there is over 483 unique occasions to celebrate during the year? Maths won't fool You,
+                <p class="staggered-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.5s">Have you heard there is over 483 unique occasions to celebrate during the year? Maths won't fool You,
                     more than one reason to give your best wishes! Don't hesitate, just pick a day and occasion! You can
                     download your greeting card or share it on Facebook. So... What you waiting for?!</p>
             </div>
@@ -107,7 +113,7 @@
             <div class="col-sm-9 col-sm-pull-3 text-right">
                 <h4 class="section-inner-header">Create unique and beautiful greeting card for any occasion you
                     want!</h4>
-                <p>With our app you can design greeting card for any occasion you want! Grandma 100th birthday? No
+                <p class="staggered-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.7s">With our app you can design greeting card for any occasion you want! Grandma 100th birthday? No
                     problem. It's been 3 years since your ex broke up with you? Even better! So many reason to send
                     someone your wishes. You won't believe how easy it is!</p>
             </div>
@@ -195,7 +201,7 @@
 
             <div class="col-sm-9 col-sm-pull-3 text-right">
                 <h4 class="section-inner-header">How to use it?</h4>
-                <p>It's very simple! The only thing you need to do is to choice kind of occasion, select background and
+                <p class="staggered-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.3s">It's very simple! The only thing you need to do is to choice kind of occasion, select background and
                     edit text. Simple as that.</p>
             </div>
         </div>
@@ -208,7 +214,7 @@
 
             <div class="col-sm-9 text-left">
                 <h4 class="section-inner-header">Do I have to pay for this??</h4>
-                <p>I'ts absolutely free of charge! The only "pay" which you need to do is to pay your attention while
+                <p class="staggered-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.5s">I'ts absolutely free of charge! The only "pay" which you need to do is to pay your attention while
                     editing ;) Have fun!</p>
             </div>
         </div>
@@ -220,7 +226,7 @@
 
             <div class="col-sm-9 col-sm-pull-3 text-right">
                 <h4 class="section-inner-header">Can I realy create my own holiday?</h4>
-                <p>Yes, you can create your own occassion. Just edit the text in the Wish Generator. If you wish us to
+                <p class="staggered-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.7s">Yes, you can create your own occassion. Just edit the text in the Wish Generator. If you wish us to
                     add this occasion to our database - just contact us!</p>
             </div>
         </div>
@@ -233,7 +239,7 @@
 
             <div class="col-sm-9 text-left">
                 <h4 class="section-inner-header">How should I contact with you in case something went wrong?</h4>
-                <p>Drop us a message on e-mail or leave a comment on our social media - simple as that.</p>
+                <p class="staggered-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.9s">Drop us a message on e-mail or leave a comment on our social media - simple as that.</p>
             </div>
         </div>
     </section>
@@ -368,12 +374,13 @@
 
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <button class="btn btn-primary pull-right" type="submit">Send a message!</button>
+                            <button class="btn btn-primary pull-right"  type="submit" id="buttonOnBlock">Send a message!</button>
                             <span id="status">Message sent!</span>
                         </div>
                     </div>
                 </form>
             </div>
+            <div class="g-recaptcha col-md-offset-7" data-callback="enableBtn" data-sitekey="6LccMy8UAAAAADYq_LN4otcPOh6ygKVe2kYxIMrp "></div>
         </div>
     </section>
 </main>
@@ -421,6 +428,9 @@
 <script src="assets/scripts/counter.js"></script>
 <script src="assets/scripts/top-button.js"></script>
 <script src="assets/scripts/navbar.js"></script>
+<script src="assets/scripts/animated-paragraphs.js"></script>
+<script src="assets/scripts/antybot.js"></script>
+
 <script src="assets/scripts/dynamic-web-title.js"></script>
 <button id="nav-button" title="Go to top">Top</button>
 </body>
