@@ -382,3 +382,13 @@ nav.shrink .navbar-brand {
 .staggered-animation{
     opacity:0;
 }
+
+/*captcha resize*/
+
+.g-recaptcha {
+    float: right;
+    padding-top: 1rem;
+    margin: 0 auto;
+    transform-origin: right top;
+    -webkit-transform-origin: right top;
+}
