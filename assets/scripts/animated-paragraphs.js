@@ -21,6 +21,4 @@ function onScrollInit( items, trigger ) {
     });
 }
 
-// onScrollInit( $('#about p') );
-// onScrollInit( $('#faq p') );
 onScrollInit( $('.staggered-animation') );
