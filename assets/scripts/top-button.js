@@ -2,8 +2,8 @@ $(document).ready(function () {
     const scrollDuration = 500;
     const showNavButtonThreshold = 20;
 
-    var $navButton = $("#nav-button");
-    var $window = $(window);
+    let $navButton = $('#nav-button');
+    let $window = $(window);
 
     function checkScrollPosition() {
         if ($window.scrollTop() > showNavButtonThreshold) {
