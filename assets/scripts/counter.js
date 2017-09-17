@@ -1,13 +1,13 @@
 $(document).ready(function () {
     const loadingDuration = 1000;
-    var numbersShown = false;
+    let areNumbersVisible = false;
 
-    var $window = $(window);
-    var $numbersRow = $('#numbers');
-    var $counters = $numbersRow.find('.counter');
+    const $window = $(window);
+    const $numbersRow = $('#numbers');
+    const $counters = $numbersRow.find('.counter');
 
     function isInViewport(element) {
-        var boundingBox = element[0].getBoundingClientRect();
+        const boundingBox = element[0].getBoundingClientRect();
 
         return (
             boundingBox.top >= 0 &&
@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     function showNumbers() {
         $counters.each(function () {
-            var $counter = $(this);
+            let $counter = $(this);
             $counter.css('visibility', 'visible');
             $counter.prop('targetValue', 0).animate({
                 targetValue: $counter.text()
@@ -30,12 +30,12 @@ $(document).ready(function () {
                 }
             });
         });
-        numbersShown = true;
+        areNumbersVisible = true;
     }
 
     $window.on('scroll', function () {
-        if (!numbersShown && isInViewport($numbersRow)) showNumbers();
+        if (!areNumbersVisible && isInViewport($numbersRow)) showNumbers();
     });
 
-    if (!numbersShown && isInViewport($numbersRow)) showNumbers();
+    if (!areNumbersVisible && isInViewport($numbersRow)) showNumbers();
 });

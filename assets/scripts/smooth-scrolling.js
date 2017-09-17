@@ -1,14 +1,13 @@
 $(document).ready(function () {
     const scrollTime = 500;
 
-    var $navItem = $('.navbar a');
-    var $heroBtn = $('.hero-content').find('a');
-    var $body = $('html, body');
+    const $selectedElements = $('.navbar a, .hero-content a');
+    const $body = $('html, body');
 
     function scrollSmoothly(event) {
-        if (this.hash !== "") {
-            var hash = this.hash;
-            var $section = $(hash);
+        if (this.hash !== '') {
+            const hash = this.hash;
+            const $section = $(hash);
 
             event.preventDefault();
             $body.animate({
@@ -19,6 +18,5 @@ $(document).ready(function () {
         }
     }
 
-    $navItem.on('click', scrollSmoothly);
-    $heroBtn.on('click', scrollSmoothly);
+    $selectedElements.on('click', scrollSmoothly);
 });
