@@ -176,6 +176,10 @@ a.navbar-brand {
 }
 
 
+.thumbnail a{
+    text-decoration: none;
+}
+
 .thumbnail a>img{
     display: inline-block;
     width: 60px;
