@@ -382,3 +382,21 @@ nav.shrink .navbar-brand {
 .staggered-animation{
     opacity:0;
 }
+
+/*modal */
+.modal-image {
+    margin:0 auto;
+}
+
+.modal-btn {
+    display: block;
+    margin:0 auto;
+}
+
+#modal p {
+    font-size: 2em;
+}
+
+#modal h2 {
+    font-size: 2.5em;
+}
