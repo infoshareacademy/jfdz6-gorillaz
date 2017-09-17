@@ -332,15 +332,6 @@ a.navbar-brand {
     visibility: hidden;
 }
 
-/* animated-paragraphs*/
-
-/*.os-animation{*/
-    /*opacity: 0;*/
-/*}*/
-
-/*.os-animation.animated{*/
-    /*opacity: 1;*/
-/*}*/
 .staggered-animation{
     opacity:0;
 }
