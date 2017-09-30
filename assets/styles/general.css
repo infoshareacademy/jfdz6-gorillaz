@@ -394,6 +394,6 @@ nav.shrink .navbar-brand {
     font-size: 2em;
 }
 
-#modal h2 {
-    font-size: 2.5em;
+.modal-img {
+    margin: auto;
 }
