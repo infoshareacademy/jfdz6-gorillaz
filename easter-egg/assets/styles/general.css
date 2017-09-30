@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #2196f3;
+    max-width: 90vh;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.bar {
+    text-align: center;
+}
+
+.bar-item {
+    font-size: 1.3em;
+    color: white;
+}
+
+#btnRestart {
+    background-color: #ffc107;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.section {
+    margin-top: 30px;
+    padding: 0 30px;
+}
+
+#gameBoard .row {
+    max-width: 90vh;
+    margin: 0 auto;
+}
+
+#gameBoard .row .col-xs-3 {
+    padding: 10px;
+}
+
+.card {
+    -webkit-perspective: 800px;
+    transition: -webkit-transform .5s linear;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    cursor: pointer;
+}
+
+.hero-image, .blank-image, .fake-image {
+    display: block;
+}
+
+.blank-image, .hero-image {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+}
+
+.hero-image {
+    -webkit-transform: rotateY(180deg);
+}
+
+.card.flipped {
+    -webkit-transform: rotateY(180deg);
+}
+
+.fake-image {
+    visibility: hidden;
+}
