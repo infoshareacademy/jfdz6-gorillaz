@@ -154,12 +154,13 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username">
+                    <input type="text" class="form-control" id="username" placeholder="Username" title="only a-z, A-Z, 0-9 allowed to use">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" placeholder="Password" title="only a-z, A-Z, 0-9 allowed to use">
                 </div>
+                <p id="hidden-paragraph">Wrong input. Use at least 4 signs, but not more than 10 in both: username and password.</p>
             </div>
             <div class="modal-footer">
                 <span id="topScores">Top 3: </span>
