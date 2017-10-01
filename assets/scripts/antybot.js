@@ -1,7 +1,10 @@
+
 document.getElementById('buttonOnBlock').disabled = true;
 
 function enableBtn(){
-    document.getElementById('buttonOnBlock').disabled = false;
+    $('#buttonOnBlock').attr("disabled", false).addClass('active-send');
+
+
 }
 
 function scaleCaptcha(elementWidth) {
@@ -27,3 +30,4 @@ $(function() {
     $(window).resize( $.throttle( 100, scaleCaptcha ) );
 
 });
+

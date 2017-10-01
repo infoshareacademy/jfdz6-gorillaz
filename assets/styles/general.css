@@ -262,8 +262,14 @@ a.navbar-brand {
     background-color: #3d5cff;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+#buttonOnBlock.active-send:hover{
     color: #ff6f2f;
+}
+
+#buttonOnBlock:hover {
+    color: white;
+    background-color: #3d5cff;
 }
 
 /*Cookies*/
