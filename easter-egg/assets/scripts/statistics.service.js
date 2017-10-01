@@ -1,5 +1,5 @@
 let StatisticsService = function (httpsService, timerService) {
-    const totalHeroes = 8;
+    const totalHeroes = 1;
     let bestScore = 0;
     let guessed = 0;
     let attempts = 0;

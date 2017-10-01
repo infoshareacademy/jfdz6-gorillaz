@@ -67,3 +67,43 @@ header {
 .fake-image {
     visibility: hidden;
 }
+
+/*IN PROGERS*/
+
+.modal-header {
+    border: none;
+    color: #ff6f2f;
+}
+
+.modal-body {
+    border: none;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.btn-end {
+    width: 100%;
+}
+
+.game-score {
+    display: block;
+    text-align: center;
+}
+
+.modal-end {
+    text-align: center;
+}
+
+.counter {
+    font-size: 75px;
+    font-weight: 900;
+    color: #3d5cff;
+    visibility: hidden;
+}
+
+.shareFacebook {
+
+    margin-bottom: 2rem;
+}
