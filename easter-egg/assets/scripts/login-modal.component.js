@@ -49,5 +49,4 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
     $btnSignUp.on('click', signUp);
 
     getTopScores();
-    $loginModal.modal();
 };
