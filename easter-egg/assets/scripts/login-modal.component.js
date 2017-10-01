@@ -45,8 +45,38 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         $topScores.text(topScores);
     }
 
+
+    // dodać warunki && dla dlugosci znaków i bez znaków specjalnych
+
+    function validate() {
+        return $username.val().length > 3 && $password.val().length > 3;
+    }
+
     $btnSignIn.on('click', signIn);
     $btnSignUp.on('click', signUp);
+
+    $username.on('change', function () {
+        if(validate()) {
+            $btnSignIn.attr('disabled', false);
+            $btnSignUp.attr('disabled', false);
+
+        } else {
+            $btnSignIn.attr('disabled', true);
+            $btnSignUp.attr('disabled', true);
+        }
+    });
+
+    $password.on('change', function () {
+        if(validate()) {
+            $btnSignIn.add($btnSignUp).attr('disabled', false);
+            // $btnSignUp.attr('disabled', false);
+            //wyedytować jak powy żej
+        } else {
+            $btnSignIn.attr('disabled', true);
+            $btnSignUp.attr('disabled', true);
+            //powinno pokazać paragraf z ostrzeżeniem
+        }
+    });
 
     getTopScores();
     $loginModal.modal();
