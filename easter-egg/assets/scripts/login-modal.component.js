@@ -49,7 +49,7 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
     // dodać warunki && dla dlugosci znaków i bez znaków specjalnych
 
     function validate() {
-        return $username.val().length > 3 && $username.val().length < 11 && $password.val().length > 3 && $password.val().length < 11 && $username.add($password).filter_input({regex:'[a-zA-Z0-9_]'});
+        return $username.val().length > 3 && $username.val().length < 11 && $password.val().length > 3 && $password.val().length < 11;
     }
 
     $btnSignIn.on('click', signIn);
@@ -60,26 +60,22 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
     $username.on('change', function () {
         if(validate()) {
             $btnSignIn.add($btnSignUp).attr('disabled', false);
-            // $btnSignIn.attr('disabled', false);
-            // $btnSignUp.attr('disabled', false);
+            $("#hidden-paragraph").hide();
 
         } else {
             $btnSignIn.add($btnSignUp).attr('disabled', true);
-            // $btnSignIn.attr('disabled', true);
-            // $btnSignUp.attr('disabled', true);
+            $("#hidden-paragraph").show( 100 ).css("color", "red");
+
         }
     });
 
     $password.on('change', function () {
         if(validate()) {
             $btnSignIn.add($btnSignUp).attr('disabled', false);
-            // $btnSignUp.attr('disabled', false);
-            //wyedytować jak powy żej
+            $("#hidden-paragraph").hide();
+
         } else {
             $btnSignIn.add($btnSignUp).attr('disabled', true);
-            // $btnSignIn.attr('disabled', true);
-            // $btnSignUp.attr('disabled', true);
-            //powinno pokazać paragraf z ostrzeżeniem
             $("#hidden-paragraph").show( 100 ).css("color", "red");
         }
     });
