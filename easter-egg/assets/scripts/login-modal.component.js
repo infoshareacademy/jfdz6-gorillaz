@@ -10,6 +10,7 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         localStorage.token = userData.token;
         statisticsService.changedBestScore.next(userData.bestScore);
         statisticsService.retrievedUser.next(userData.username);
+        statisticsService.loggedoutUser.subscribe(reloadLoginModal);
 
         timerService.startTimer();
         $loginModal.modal('hide');
@@ -43,6 +44,14 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         }
 
         $topScores.text(topScores);
+    }
+
+    function reloadLoginModal() {
+        $username.val('');
+        $password.val('');
+
+        getTopScores();
+        $loginModal.modal();
     }
 
     $btnSignIn.on('click', signIn);

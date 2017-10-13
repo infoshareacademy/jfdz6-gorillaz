@@ -9,6 +9,7 @@ let StatisticsService = function (httpsService, timerService) {
     let finishedGame = Observable();
     let changedBestScore = Observable();
     let restartedGame = Observable();
+    let loggedoutUser = Observable();
     let retrievedUser = Observable();
     let changedTime = Observable();
 
@@ -54,6 +55,16 @@ let StatisticsService = function (httpsService, timerService) {
         timerService.restartTimer();
     }
 
+    function logoutUser() {
+        timerService.stopTimer();
+
+        httpsService.remove('/users/logout', {token: localStorage.token})
+            .then(() => {
+                localStorage.removeItem('token');
+                loggedoutUser.next();
+            });
+    }
+
     initialize();
 
     return {
@@ -62,12 +73,14 @@ let StatisticsService = function (httpsService, timerService) {
         finishedGame: finishedGame,
         changedBestScore: changedBestScore,
         restartedGame: restartedGame,
+        loggedoutUser: loggedoutUser,
         retrievedUser: retrievedUser,
         changedTime: changedTime,
         getBestScore: getBestScore,
         makeAttempt: makeAttempt,
         guessHero: guessHero,
-        restartGame: restartGame
+        restartGame: restartGame,
+        logoutUser: logoutUser
     };
 };
 
