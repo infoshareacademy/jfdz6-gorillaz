@@ -1,6 +1,7 @@
 let DashboardComponent = function (statisticsService) {
     const $statistics = $('.bar-item');
     const $btnRestart = $statistics.find('#btnRestart');
+    const $btnLogout = $statistics.find('#btnLogout');
     const $attempts = $statistics.find('#attempts');
     const $guessed = $statistics.find('#guessed');
     const $gameTime = $statistics.find('#timer');
@@ -13,6 +14,7 @@ let DashboardComponent = function (statisticsService) {
     statisticsService.changedBestScore.subscribe((bestScore) => $bestScore.text(bestScore));
 
     $btnRestart.on('click', () => statisticsService.restartGame());
+    $btnLogout.on('click', () => statisticsService.logoutUser());
     $bestScore.text(statisticsService.getBestScore());
 };
 
