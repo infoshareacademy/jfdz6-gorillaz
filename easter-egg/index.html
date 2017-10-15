@@ -9,6 +9,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1641729335901592',
+            xfbml      : true,
+            version    : 'v2.10'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <header class="container-fluid">
     <div class="row bar">
         <div class="col-sm-3 bar-item">
@@ -187,7 +205,12 @@
                 <h2>You've won the game with score:</h2>
                     <h1><span class="game-score counter" ></span></h1>
                 <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-                    <button class="btn btn-primary pull-right shareFacebook center-block">Share on Facebook!</button>
+                    <div
+                            class="fb-like"
+                            data-share="true"
+                            data-width="450"
+                            data-show-faces="true">
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
