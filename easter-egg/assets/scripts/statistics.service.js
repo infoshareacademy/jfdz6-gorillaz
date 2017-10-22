@@ -42,6 +42,11 @@ let StatisticsService = function (httpsService, timerService) {
         return Math.floor(1000 / (0.7 * attempts + 0.3 * timerService.getCurrentTime()));
     }
 
+    function setBestScore(newBestScore) {
+        bestScore = newBestScore;
+        changedBestScore.next(bestScore);
+    }
+
     function getBestScore() {
         return bestScore;
     }
@@ -76,6 +81,7 @@ let StatisticsService = function (httpsService, timerService) {
         loggedoutUser: loggedoutUser,
         retrievedUser: retrievedUser,
         changedTime: changedTime,
+        setBestScore: setBestScore,
         getBestScore: getBestScore,
         makeAttempt: makeAttempt,
         guessHero: guessHero,
