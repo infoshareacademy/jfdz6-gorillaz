@@ -10,6 +10,7 @@ let SuccessModalComponent = function (httpsService, statisticsService) {
     function showSuccessModal() {
         $successModal.find('.game-score').text(newBestScore);
         $successModal.modal();
+        runShowNumbers();
     }
 
     function showErrorMessage(errorMessage) {
