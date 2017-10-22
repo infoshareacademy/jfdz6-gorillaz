@@ -105,6 +105,14 @@ header {
     color: #ff6f2f;
 }
 
+h1.modal-title {
+    font-weight: bold;
+}
+
+h2.modal-title {
+    font-weight: bold;
+}
+
 .modal-body {
     border: none;
 }
@@ -113,8 +121,34 @@ header {
     border: none;
 }
 
-.btn-end {
+.btn--next {
     width: 100%;
+    font-weight: bold;
+}
+
+#modal-body--instruction {
+    text-align: left;
+}
+
+li {
+    padding-top: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.form-group {
+    width: 45%;
+    float: left;
+}
+
+.form-group:first-child {
+    margin-right: 10%;
 }
 
 .game-score {
@@ -122,7 +156,7 @@ header {
     text-align: center;
 }
 
-.modal-end {
+.modal--head {
     text-align: center;
 }
 

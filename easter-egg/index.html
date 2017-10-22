@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/general.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -169,9 +170,9 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header modal--head">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Welcome, please sign in or sign up</h4>
+                <h2 class="modal-title">Please sign in or sign up</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -198,16 +199,30 @@
     <div class="modal-dialog">
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content modal--head">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Hello my friend!</h4>
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <h1 class="modal-title">Hello my Friend!</h1>
             </div>
             <div class="modal-body">
-                <p>This is how to play</p>
+                <h3>Before we star, there are a few things You should know first:</h3>
+                <div id="modal-body--instruction">
+                    <h4>
+                        <ul>
+                            <li>It's no an another Saw Game, so don't panic!</li>
+                            <li>To win You have to match to pair all the heroes because it's a memory game! </li>
+                            <li>You get it? It's memory game so there are no time limits, just pure fun.</li>
+                            <li>For each match you score a points, the faster you made it, the more points you get.</li>
+                            <li>Are you ready?</li>
+                            <li>And remember, if you Like It, give us a <a href="https://www.facebook.com/infoshareacademy/" target="_blank"> Thumb Up!</a>
+                            </li>
+                        </ul>
+                    </h4>
+                </div>
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="btnStartGame" data-dismiss="modal">Start game</button>
+                <button type="button" class="btn btn-primary btn--next" id="btnStartGame" data-dismiss="modal">Start game</button>
             </div>
         </div>
 
@@ -220,7 +235,7 @@
 
         <!-- Modal content-->
 
-        <div class="modal-content modal-end">
+        <div class="modal-content modal-end modal--head">
             <div class="modal-header">
                 <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
                 <h1 class="modal-title">Congratulations!</h1>
@@ -238,7 +253,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-end" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-end btn--next" data-dismiss="modal">Close</button>
             </div>
         </div>
 
