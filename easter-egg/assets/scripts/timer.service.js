@@ -20,7 +20,9 @@ let TimerService = function () {
     }
 
     function stopTimer() {
-        clearInterval(interval);
+        if (interval) {
+            clearInterval(interval);
+        }
     }
 
     function getCurrentTime() {

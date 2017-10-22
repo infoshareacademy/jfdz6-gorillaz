@@ -3,6 +3,7 @@
 <head>
     <title>Memory game</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/general.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -11,20 +12,23 @@
 <body>
 <header class="container-fluid">
     <div class="row bar">
-        <div class="col-sm-3 bar-item">
-            <button type="button" id="btnRestart">Restart</button>
+        <div class="col-xs-8 col-sm-4 bar-item">
+            <p>Welcome <i id="greeting"></i></p>
+            <button type="button" class="bar-btn" id="btnRestart">Restart</button>
+            <button type="button" class="bar-btn" id="btnLogout">Log out</button>
         </div>
-        <div class="col-sm-2 bar-item">
+        <div class=" col-xs-4 col-sm-2 bar-item">
+            To beat!<br><span id="bestScore">0</span>
+        </div>
+        <div class="clearfix visible-xs-block" style="margin-bottom: 10px"></div>
+        <div class="col-xs-4 col-sm-2 bar-item">
             Attempts<br><span id="attempts">0</span>
         </div>
-        <div class="col-sm-2 bar-item">
+        <div class="col-xs-4 col-sm-2 bar-item">
             Guessed<br><span id="guessed">0</span>/8
         </div>
-        <div class="col-sm-2 bar-item">
-            Game time<br><span id="timer">0 : 00</span>
-        </div>
-        <div class="col-sm-3 bar-item">
-            Best score<br><span id="bestScore">0</span>
+        <div class="col-xs-4 col-sm-2 bar-item">
+            Time<br><span id="timer">0 : 00</span>
         </div>
     </div>
 </header>

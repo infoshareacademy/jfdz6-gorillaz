@@ -50,9 +50,27 @@ let HttpsService = function (baseUrl) {
         });
     }
 
+    function remove(endpoint, data) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                type: 'DELETE',
+                url: baseUrl + endpoint,
+                data: data,
+                success: function (response) {
+                    resolve(response);
+                },
+                error: function (response) {
+                    reject(response.responseJSON);
+                },
+                dataType: 'json'
+            });
+        });
+    }
+
     return {
         get: get,
         post: post,
-        put: put
+        put: put,
+        remove: remove
     };
 };
