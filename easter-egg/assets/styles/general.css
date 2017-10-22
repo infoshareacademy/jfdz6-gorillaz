@@ -5,7 +5,7 @@
 header {
     background-color: #2196f3;
     max-width: 90vh;
-    padding: 15px;
+    padding: 10px;
     border-radius: 30px;
 }
 
@@ -14,29 +14,59 @@ header {
 }
 
 .bar-item {
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: white;
 }
 
-#btnRestart {
+#greeting {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.bar-btn {
     background-color: #ffc107;
-    padding: 8px;
+    padding: 6px;
     border: none;
     border-radius: 5px;
 }
 
+#btnRestart {
+    margin-right: 15px;
+}
+
 .section {
     margin-top: 30px;
-    padding: 0 30px;
+    padding: 0 10px;
 }
 
 #gameBoard .row {
-    max-width: 90vh;
+    max-width: 100vh;
     margin: 0 auto;
 }
 
 #gameBoard .row .col-xs-3 {
-    padding: 10px;
+    padding: 5px;
+}
+
+@media (min-width: 768px) {
+    .bar-item,
+    #greeting {
+        font-size: 1.4em;
+    }
+
+    .section {
+        padding: 0 30px;
+    }
+
+    #gameBoard .row .col-xs-3 {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    #gameBoard .row {
+        max-width: 80vh;
+    }
 }
 
 .card {

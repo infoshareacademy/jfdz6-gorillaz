@@ -8,8 +8,9 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
 
     function startGame(userData) {
         localStorage.token = userData.token;
-        statisticsService.changedBestScore.next(userData.bestScore);
+        statisticsService.setBestScore(userData.bestScore);
         statisticsService.retrievedUser.next(userData.username);
+        statisticsService.loggedoutUser.subscribe(reloadLoginModal);
 
         timerService.startTimer();
         $loginModal.modal('hide');
@@ -45,15 +46,36 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         $topScores.text(topScores);
     }
 
+    function reloadLoginModal() {
+        $username.val('');
+        $password.val('');
 
-    // dodać warunki && dla dlugosci znaków i bez znaków specjalnych
-
-    function validate() {
-        return $username.val().length > 3 && $username.val().length < 11 && $password.val().length > 3 && $password.val().length < 11;
+        getTopScores();
+        $loginModal.modal();
     }
 
     $btnSignIn.on('click', signIn);
     $btnSignUp.on('click', signUp);
+
+    // getTopScores();
+    // $loginModal.modal();
+
+    if (!localStorage.token) {
+        getTopScores();
+        $loginModal.modal();
+    } else {
+        httpsService.post('/users/verify', {token: localStorage.token})
+            .then((userBestScore) => {
+                statisticsService.setBestScore(userBestScore.bestScore);
+                statisticsService.retrievedUser.next(userBestScore.username);
+                statisticsService.loggedoutUser.subscribe(reloadLoginModal);
+                timerService.startTimer();
+            });
+    }
+
+    function validate() {
+        return $username.val().length > 3 && $username.val().length < 11 && $password.val().length > 3 && $password.val().length < 11;
+    }
 
     $("#hidden-paragraph").hide();
 
@@ -79,7 +101,4 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
             $("#hidden-paragraph").show( 100 ).css("color", "red");
         }
     });
-
-    getTopScores();
-    $loginModal.modal();
 };
