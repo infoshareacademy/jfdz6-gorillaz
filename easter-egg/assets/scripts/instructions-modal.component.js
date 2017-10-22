@@ -3,7 +3,7 @@ let InstructionsModalComponent = function (loginModal){
     const $btnStartGame = $instructionsModal.find('#btnStartGame');
 
     $btnStartGame.on('click', () => {
-        $('#loginModal').modal();
+        loginModal.authenticateUser();
     });
 
     $instructionsModal.modal();

@@ -151,6 +151,10 @@ a:hover {
     margin-right: 10%;
 }
 
+.btn--login--modal {
+    width: 50%;
+}
+
 .game-score {
     display: block;
     text-align: center;

@@ -3,7 +3,7 @@ $(document).ready(function () {
     const timerService = TimerService();
     const statisticsService = StatisticsService(httpsService, timerService);
     const loginModalComponent = LoginModalComponent(httpsService, statisticsService, timerService);
-    const instructionsModalComponent = InstructionsModalComponent();
+    const instructionsModalComponent = InstructionsModalComponent(loginModalComponent);
     const dashboardComponent = DashboardComponent(statisticsService);
     const boardComponent = BoardComponent(statisticsService);
     const succesModalComponent = SuccessModalComponent(httpsService, statisticsService);
