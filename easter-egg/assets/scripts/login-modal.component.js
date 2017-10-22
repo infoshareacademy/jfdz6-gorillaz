@@ -8,8 +8,9 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
 
     function startGame(userData) {
         localStorage.token = userData.token;
-        statisticsService.changedBestScore.next(userData.bestScore);
+        statisticsService.setBestScore(userData.bestScore);
         statisticsService.retrievedUser.next(userData.username);
+        statisticsService.loggedoutUser.subscribe(reloadLoginModal);
 
         timerService.startTimer();
         $loginModal.modal('hide');
@@ -45,8 +46,30 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         $topScores.text(topScores);
     }
 
+    function reloadLoginModal() {
+        $username.val('');
+        $password.val('');
+
+        getTopScores();
+        $loginModal.modal();
+    }
+
     $btnSignIn.on('click', signIn);
     $btnSignUp.on('click', signUp);
 
-    getTopScores();
+    // getTopScores();
+    // $loginModal.modal();
+
+    if (!localStorage.token) {
+        getTopScores();
+        $loginModal.modal();
+    } else {
+        httpsService.post('/users/verify', {token: localStorage.token})
+            .then((userBestScore) => {
+                statisticsService.setBestScore(userBestScore.bestScore);
+                statisticsService.retrievedUser.next(userBestScore.username);
+                statisticsService.loggedoutUser.subscribe(reloadLoginModal);
+                timerService.startTimer();
+            });
+    }
 };
