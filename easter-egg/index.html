@@ -164,12 +164,14 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Password" title="only a-z, A-Z, 0-9 allowed to use">
                 </div>
-                <p id="hidden-paragraph">Wrong input. Use at least 4 signs, but not more than 10 in both: username and password.</p>
+                <p id="hidden-paragraph">Wrong input. Use at least 4 signs, but not more than 10 in both: username and password. Only a-z, A-Z and 0-9 allowed.</p>
             </div>
             <div class="modal-footer">
-                <span id="topScores">Top 3: </span>
-                <button type="button" class="btn btn-primary" id="btnSignIn" disabled>Sign in</button>
-                <button type="button" class="btn btn-primary" id="btnSignUp" disabled>Sign up</button>
+                <div>
+                    <div class="col-xs-12 col-md-4"><span id="topScores">Top 3: </span></div>
+                    <div class="col-xs-6 col-md-4"><button type="button" class="btn btn-primary" id="btnSignIn" disabled>Sign in</button></div>
+                    <div class="col-xs-6 col-md-4"><button type="button" class="btn btn-primary" id="btnSignUp" disabled>Sign up</button></div>
+                </div>
             </div>
         </div>
 

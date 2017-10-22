@@ -97,3 +97,11 @@ header {
 .fake-image {
     visibility: hidden;
 }
+
+.modal-footer {
+    text-align: center;
+}
+
+.btn-primary {
+    margin: 5px;
+}

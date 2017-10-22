@@ -73,30 +73,32 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
             });
     }
 
-    function validate() {
-        return $username.val().length > 3 && $username.val().length < 11 && $password.val().length > 3 && $password.val().length < 11;
+    function validate(element) {
+        var $element = $(element);
+        return $element.val().length > 3 && $element.val().length < 11;
     }
 
     $("#hidden-paragraph").hide();
 
-    $username.on('change', function () {
-        if(validate()) {
+    $username.on('change keyup', function () {
+        this.value = this.value.replace(/[^a-z0-9]/gi, '');
+        if(validate(this) && validate($password)) {
             $btnSignIn.add($btnSignUp).attr('disabled', false);
             $("#hidden-paragraph").hide();
-
-        } else {
+        } else if( $username.val().length > 0 && $password.val().length > 0 ){
             $btnSignIn.add($btnSignUp).attr('disabled', true);
             $("#hidden-paragraph").show( 100 ).css("color", "red");
 
         }
     });
 
-    $password.on('change', function () {
-        if(validate()) {
+    $password.on('change keyup', function () {
+        this.value = this.value.replace(/[^a-z0-9]/gi, '');
+        if(validate(this) && validate($username)) {
             $btnSignIn.add($btnSignUp).attr('disabled', false);
             $("#hidden-paragraph").hide();
 
-        } else {
+        } else if( $username.val().length > 0 && $password.val().length > 0 ){
             $btnSignIn.add($btnSignUp).attr('disabled', true);
             $("#hidden-paragraph").show( 100 ).css("color", "red");
         }
