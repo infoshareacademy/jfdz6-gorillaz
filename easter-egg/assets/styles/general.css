@@ -97,3 +97,20 @@ header {
 .fake-image {
     visibility: hidden;
 }
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal__paragraph {
+    padding: 8px 8px 0 8px;
+}
+
+.modal__paragraph--error {
+    display: none;
+    color: red;
+}
+
+.modal__paragraph--highlighted {
+    font-weight: bold;
+}

@@ -1,10 +1,13 @@
 let LoginModalComponent = function (httpsService, statisticsService, timerService) {
-    const $loginModal = $('#loginModal');
-    const $username = $loginModal.find('#username');
-    const $password = $loginModal.find('#password');
-    const $topScores = $loginModal.find('#topScores');
-    const $btnSignIn = $loginModal.find('#btnSignIn');
-    const $btnSignUp = $loginModal.find('#btnSignUp');
+    const $modalLogin = $('#modal-login');
+    const $username = $modalLogin.find('#username');
+    const $password = $modalLogin.find('#password');
+    const $topScores = $modalLogin.find('#topScores');
+    const $btnSignIn = $modalLogin.find('#btn-sign-in');
+    const $btnSignUp = $modalLogin.find('#btn-sign-up');
+
+    const showErrorThreshold = 100;
+    const hideErrorThreshold = 100;
 
     function startGame(userData) {
         localStorage.token = userData.token;
@@ -13,7 +16,7 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         statisticsService.loggedoutUser.subscribe(reloadLoginModal);
 
         timerService.startTimer();
-        $loginModal.modal('hide');
+        $modalLogin.modal('hide');
     }
 
     function showErrorMessage(errorMessage) {
@@ -21,11 +24,41 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
     }
 
     function signIn() {
-        httpsService.post('/users/login', getUserObject()).then(startGame).catch(showErrorMessage);
+        if ($username.val().length === 0 || $password.val().length === 0) {
+            return;
+        } else {
+            httpsService.post('/users/login', getUserObject()).then(startGame).catch(showErrorMessage);
+        }
     }
 
     function signUp() {
-        httpsService.post('/users', getUserObject()).then(startGame).catch(showErrorMessage);
+        let isInputCorrect = true;
+
+        if (!isWordLengthCorrect($username)) {
+            $username.siblings('.modal__paragraph--error').show(showErrorThreshold);
+            isInputCorrect = false;
+        } else {
+            $username.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
+        }
+
+        if (!isWordLengthCorrect($password) || !isWordWithoutSpecialCharacters($password)) {
+            $password.siblings('.modal__paragraph--error').show(showErrorThreshold);
+            isInputCorrect = false;
+        } else {
+            $password.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
+        }
+
+        if (isInputCorrect) {
+            httpsService.post('/users', getUserObject()).then(startGame).catch(showErrorMessage);
+        }
+    }
+
+    function isWordLengthCorrect(word) {
+        return word.val().length > 4 && word.length < 8;
+    }
+
+    function isWordWithoutSpecialCharacters(word) {
+        return !/[!@#$%^&*]/.test(word.val());
     }
 
     function getTopScores() {
@@ -50,20 +83,20 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         $username.val('');
         $password.val('');
 
+        $username.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
+        $password.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
+
         getTopScores();
-        $loginModal.modal();
+        $modalLogin.modal();
     }
 
     $btnSignIn.on('click', signIn);
     $btnSignUp.on('click', signUp);
 
-    // getTopScores();
-    // $loginModal.modal();
-
     function authenticateUser() {
         if (!localStorage.token) {
             getTopScores();
-            $loginModal.modal();
+            $modalLogin.modal();
         } else {
             httpsService.post('/users/verify', {token: localStorage.token})
                 .then((userBestScore) => {
