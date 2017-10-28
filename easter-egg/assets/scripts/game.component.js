@@ -17,5 +17,6 @@ $(document).ready(function () {
     const dashboardComponent = DashboardComponent(statisticsService);
     const boardComponent = BoardComponent(statisticsService);
     const succesModalComponent = SuccessModalComponent(httpsService, statisticsService);
+    loginModalComponent.authenticateUser();
 });
 

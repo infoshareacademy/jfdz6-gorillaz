@@ -93,16 +93,24 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
     $btnSignIn.on('click', signIn);
     $btnSignUp.on('click', signUp);
 
-    if (!localStorage.token) {
-        getTopScores();
-        $modalLogin.modal();
-    } else {
-        httpsService.post('/users/verify', {token: localStorage.token})
-            .then((userBestScore) => {
-                statisticsService.setBestScore(userBestScore.bestScore);
-                statisticsService.retrievedUser.next(userBestScore.username);
-                statisticsService.loggedoutUser.subscribe(reloadLoginModal);
-                timerService.startTimer();
-            });
+    function authenticateUser() {
+        if (!localStorage.token) {
+            getTopScores();
+            $loginModal.modal();
+        } else {
+            httpsService.post('/users/verify', {token: localStorage.token})
+                .then((userBestScore) => {
+                    statisticsService.setBestScore(userBestScore.bestScore);
+                    statisticsService.retrievedUser.next(userBestScore.username);
+                    statisticsService.loggedoutUser.subscribe(reloadLoginModal);
+                    timerService.startTimer();
+                });
+        }
+    }
+
+    return {
+        authenticateUser: authenticateUser
     }
 };
+
+
