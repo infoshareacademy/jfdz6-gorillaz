@@ -328,7 +328,7 @@
                     <p>Do you have knowledge and experience in graphic design?</p>
                     <p>Are you good at playing FIFA?</p>
                     <p>
-                        <button type="button" class="btn btn-primary" id="myBtn">Apply for a job</button>
+                        <button type="button" class="btn btn-primary" id="btn-easter-egg">Apply for a job</button>
                     </p>
                 </div>
             </div>
@@ -421,25 +421,28 @@
     </div>
 </footer>
 
-<section class="container text-center" id="modal">
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="modal-greeting" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="section-header">Welcome stranger...</h2>
+                <h2 class="modal-title">Welcome stranger...</h2>
             </div>
+
             <div class="modal-body">
-                <img src="assets/images/easter-egg/jigsaw-game.png" alt="jig-saw image" class="img-responsive modal-img">
-                <p>I want to play a game...</p>
+                <img src="assets/images/easter-egg/jigsaw-game.png" alt="jig-saw image"
+                     class="img-responsive modal__img">
+                <p class="modal__paragraph">I want to play a game...</p>
             </div>
-            <div class="modal-footer text-center">
-                <a href="easter-egg/index.html" target="_blank" class="btn btn-primary btn-lg modal-btn">click when ready to play!</a>
+
+            <div class="modal-footer">
+                <a href="easter-egg/index.html" target="_blank" class="btn btn-primary btn-lg">click when ready to
+                    play!</a>
             </div>
         </div>
     </div>
 </div>
-</section>
+
 
 <!--Scripts-->
 <script src="assets/scripts/smooth-scrolling.js"></script>
