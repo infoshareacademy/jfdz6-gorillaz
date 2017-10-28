@@ -1,142 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Memory game</title>
+    <title>Easter egg</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/general.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<header class="container-fluid">
-    <div class="row bar">
-        <div class="col-xs-8 col-sm-4 bar-item">
-            <p>Welcome <i id="greeting"></i></p>
-            <button type="button" class="bar-btn" id="btnRestart">Restart</button>
-            <button type="button" class="bar-btn" id="btnLogout">Log out</button>
+<header class="container">
+    <div class="row dashboard">
+        <div class="col-xs-8 col-sm-4 dashboard__item">
+            <p class="dashboard__text">Welcome <span class="dashboard__text--highlighted" id="greeting"></span></p>
+            <button type="button" class="dashboard__btn" id="btnRestart">Restart</button>
+            <button type="button" class="dashboard__btn" id="btnLogout">Log out</button>
         </div>
-        <div class=" col-xs-4 col-sm-2 bar-item">
-            To beat!<br><span id="bestScore">0</span>
+
+        <div class=" col-xs-4 col-sm-2 dashboard__item">
+            <p class="dashboard__text">To beat!<br><span id="bestScore">0</span></p>
         </div>
+
         <div class="clearfix visible-xs-block" style="margin-bottom: 10px"></div>
-        <div class="col-xs-4 col-sm-2 bar-item">
-            Attempts<br><span id="attempts">0</span>
+
+        <div class="col-xs-4 col-sm-2 dashboard__item">
+            <p class="dashboard__text">Attempts<br><span id="attempts">0</span></p>
         </div>
-        <div class="col-xs-4 col-sm-2 bar-item">
-            Guessed<br><span id="guessed">0</span>/8
+
+        <div class="col-xs-4 col-sm-2 dashboard__item">
+            <p class="dashboard__text">Guessed<br><span id="guessed">0</span>/8</p>
         </div>
-        <div class="col-xs-4 col-sm-2 bar-item">
-            Time<br><span id="timer">0 : 00</span>
+
+        <div class="col-xs-4 col-sm-2 dashboard__item">
+            <p class="dashboard__text">Time<br><span id="timer">0 : 00</span></p>
         </div>
     </div>
 </header>
 <main>
-    <div class="container-fluid section" id="gameBoard">
-        <div class="row">
-            <div class="col-xs-3">
-                <div class="card">
+    <div class="container board" id="gameBoard">
+        <div class="row board__row">
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                     <img src="assets/images/question.svg" alt="fake image" class="fake-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <div class="card">
+
+        <div class="row board__row">
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                     <img src="assets/images/question.svg" alt="fake image" class="fake-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <div class="card">
+
+        <div class="row board__row">
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                     <img src="assets/images/question.svg" alt="fake image" class="fake-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <div class="card">
+
+        <div class="row board__row">
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                     <img src="assets/images/question.svg" alt="fake image" class="fake-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
             </div>
-            <div class="col-xs-3">
-                <div class="card">
+
+            <div class="col-xs-3 board__col">
+                <div class="board__card">
                     <img src="" alt="hero image" class="hero-image">
                     <img src="assets/images/question.svg" alt="blank image" class="blank-image">
                 </div>
@@ -156,14 +178,14 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" id="username" placeholder="Username">
-                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Username must contain 4-8
+                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Username must contain 5-7
                         signs.</p>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Password">
-                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Password must contain 4-8
+                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Password must contain 5-7
                         alphanumerical signs.</p>
                 </div>
             </div>
@@ -173,15 +195,16 @@
                     <p class="modal__paragraph modal__paragraph--highlighted">Top 3 scores:</p>
                     <p class="modal__paragraph" id="topScores"></p>
                 </div>
+
                 <div class="col-xs-6 col-sm-2">
                     <button type="button" class="btn btn-primary" id="btn-sign-in">Sign in</button>
                 </div>
+
                 <div class="col-xs-6 col-sm-2">
                     <button type="button" class="btn btn-primary" id="btn-sign-up">Sign up</button>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

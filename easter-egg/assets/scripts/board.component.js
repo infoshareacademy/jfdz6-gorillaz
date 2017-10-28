@@ -11,7 +11,7 @@ let BoardComponent = function (statisticsService) {
     ];
     let $onTableCard;
     let $flippedCard;
-    const $cards = $('.card');
+    const $cards = $('.board__card');
 
     function startGame() {
         const cardsRotationTime = 500;
