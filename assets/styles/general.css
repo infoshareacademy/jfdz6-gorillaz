@@ -105,12 +105,12 @@ a.navbar-brand {
 
 /*Section*/
 
-.board {
+.section {
     padding: 50px 30px;
 
 }
 
-.board:not(:last-child) {
+.section:not(:last-child) {
     border-bottom: 1px solid darkgrey;
 }
 
@@ -130,13 +130,13 @@ a.navbar-brand {
     font-size: 1.6em;
 }
 
-.board p {
+.section p {
     font-size: 1em;
     letter-spacing: 1.5px;
     line-height: 1.8em;
 }
 
-.board span {
+.section span {
     font-weight: 900;
 }
 
@@ -147,7 +147,7 @@ a.navbar-brand {
 }
 
 @media (max-width: 767px) {
-    .section-inner-header, .board p {
+    .section-inner-header, .section p {
         text-align: center;
         line-height: 1.5em;
     }
@@ -176,20 +176,20 @@ a.navbar-brand {
     margin: 0 auto;
 }
 
-
-.thumbnail a{
+.thumbnail a {
     text-decoration: none;
 }
 
-.thumbnail a>img{
+.thumbnail a > img {
     display: inline-block;
     width: 60px;
     padding: 5px;
 }
 
-.thumbnail > .author-link-container{
+.thumbnail > .author-link-container {
     margin-bottom: 10px;
 }
+
 @media only screen and (min-width: 768px) {
 
     .thumbnail {
@@ -198,7 +198,7 @@ a.navbar-brand {
     }
 
     .thumbnail > .author-link-container,
-    .thumbnail .btn{
+    .thumbnail .btn {
         margin-bottom: 0;
         position: absolute;
         left: 50%;
@@ -206,7 +206,7 @@ a.navbar-brand {
         transform: translateX(-50%);
     }
 
-    .thumbnail > .author-link-container{
+    .thumbnail > .author-link-container {
         width: 200px;
         bottom: 20px;
     }
@@ -361,11 +361,9 @@ a.navbar-brand {
     visibility: hidden;
 }
 
-
 /* shrink navbar */
 
-
-nav.shrink .navbar-nav>li>a {
+nav.shrink .navbar-nav > li > a {
     padding: 0.5em;
     transition: all 0.5s;
 }
@@ -373,14 +371,15 @@ nav.shrink .navbar-nav>li>a {
 nav.navbar.shrink {
     min-height: 0;
 }
+
 nav.shrink .navbar-brand {
     display: none;
 }
 
 /*animated paragraphs*/
 
-.staggered-animation{
-    opacity:0;
+.staggered-animation {
+    opacity: 0;
 }
 
 /*captcha resize*/
@@ -391,4 +390,27 @@ nav.shrink .navbar-brand {
     margin: 0 auto;
     transform-origin: right top;
     -webkit-transform-origin: right top;
+}
+
+/*Modal*/
+
+.modal-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #ff6f2f;
+}
+
+.modal__img {
+    margin: 0 auto;
+}
+
+.modal__paragraph {
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    padding-top: 8px;
+}
+
+.modal-footer {
+    text-align: center;
 }
