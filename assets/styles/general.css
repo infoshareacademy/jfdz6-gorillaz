@@ -105,12 +105,12 @@ a.navbar-brand {
 
 /*Section*/
 
-.section {
+.board {
     padding: 50px 30px;
 
 }
 
-.section:not(:last-child) {
+.board:not(:last-child) {
     border-bottom: 1px solid darkgrey;
 }
 
@@ -130,13 +130,13 @@ a.navbar-brand {
     font-size: 1.6em;
 }
 
-.section p {
+.board p {
     font-size: 1em;
     letter-spacing: 1.5px;
     line-height: 1.8em;
 }
 
-.section span {
+.board span {
     font-weight: 900;
 }
 
@@ -147,7 +147,7 @@ a.navbar-brand {
 }
 
 @media (max-width: 767px) {
-    .section-inner-header, .section p {
+    .section-inner-header, .board p {
         text-align: center;
         line-height: 1.5em;
     }
