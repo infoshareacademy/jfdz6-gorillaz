@@ -61,7 +61,7 @@
 @media (min-width: 992px) {
     .dashboard,
     .board__row {
-        max-width: 90vh;
+        max-width: 80vh;
     }
 }
 
