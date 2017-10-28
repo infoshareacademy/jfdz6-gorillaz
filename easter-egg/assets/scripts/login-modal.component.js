@@ -96,7 +96,7 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
     function authenticateUser() {
         if (!localStorage.token) {
             getTopScores();
-            $loginModal.modal();
+            $modalLogin.modal();
         } else {
             httpsService.post('/users/verify', {token: localStorage.token})
                 .then((userBestScore) => {
