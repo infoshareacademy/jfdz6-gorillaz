@@ -1,33 +1,19 @@
+$(document).ready(function () {
+    function scaleReCaptcha() {
+        const reCaptchaWidth = 304;
+        const containerWidth = $('#contact').width();
 
-document.getElementById('buttonOnBlock').disabled = true;
+        if (reCaptchaWidth > containerWidth) {
+            const reCaptchaScale = containerWidth / reCaptchaWidth;
 
-function enableBtn(){
-    $('#buttonOnBlock').attr("disabled", false).addClass('active-send');
-
-
-}
-
-function scaleCaptcha(elementWidth) {
-
-    var reCaptchaWidth = 304;
-    var containerWidth = $('.container').width();
-
-
-    if(reCaptchaWidth > containerWidth) {
-
-        var captchaScale = containerWidth / reCaptchaWidth;
-
-        $('.g-recaptcha').css({
-            'transform':'scale('+captchaScale+')'
-        });
+            $('.g-recaptcha').css({'transform': 'scale(' + reCaptchaScale + ')'});
+        }
     }
-}
 
-$(function() {
-
-    scaleCaptcha();
-
-    $(window).resize( $.throttle( 100, scaleCaptcha ) );
-
+    scaleReCaptcha();
+    $(window).resize(scaleReCaptcha);
 });
 
+function enableBtnSendMessage() {
+    $('#btn-send-message').attr("disabled", false).addClass('enabled');
+}

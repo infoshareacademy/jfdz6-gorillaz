@@ -263,11 +263,11 @@ a.navbar-brand {
 }
 
 .btn-primary:hover,
-#buttonOnBlock.active-send:hover{
+#btn-send-message.enabled:hover {
     color: #ff6f2f;
 }
 
-#buttonOnBlock:hover {
+#btn-send-message:hover {
     color: white;
     background-color: #3d5cff;
 }
