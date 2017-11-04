@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+}
+
+/*Dashboard*/
+
+.dashboard {
+    background-color: #2196f3;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.dashboard__text {
+    font-size: 1.2em;
+    color: white;
+}
+
+.dashboard__text--highlighted {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.dashboard__btn {
+    background-color: #ffc107;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+}
+
+.dashboard__btn:not(:last-of-type) {
+    margin-right: 15px;
+}
+
+/*Board*/
+
+.board {
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.board__row {
+    max-width: 100vh;
+    margin: 0 auto;
+}
+
+.board__col {
+    padding: 5px;
+}
+
+@media (min-width: 768px) {
+    .board__col {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .dashboard,
+    .board__row {
+        max-width: 80vh;
+    }
+}
+
+.board__card {
+    -webkit-perspective: 800px;
+    transition: -webkit-transform .5s linear;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    cursor: pointer;
+}
+
+.hero-image, .blank-image, .fake-image {
+    display: block;
+}
+
+.blank-image, .hero-image {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+}
+
+.hero-image {
+    -webkit-transform: rotateY(180deg);
+}
+
+.board__card.flipped {
+    -webkit-transform: rotateY(180deg);
+}
+
+.fake-image {
+    visibility: hidden;
+}
+
+/*IN PROGERS*/
+
+.modal-header {
+    border: none;
+    color: #ff6f2f;
+}
+
+h1.modal-title {
+    font-weight: bold;
+}
+
+h2.modal-title {
+    font-weight: bold;
+}
+
+.modal-body {
+    border: none;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.btn--next {
+    width: 100%;
+    font-weight: bold;
+}
+
+#modal-body--instruction {
+    text-align: left;
+}
+
+li {
+    padding-top: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.form-group {
+    width: 45%;
+    float: left;
+}
+
+.form-group:first-child {
+    margin-right: 10%;
+}
+
+.btn--login--modal {
+    width: 50%;
+}
+
+.game-score {
+    display: block;
+    text-align: center;
+}
+
+.modal--head {
+    text-align: center;
+}
+
+.counter {
+    font-size: 75px;
+    font-weight: 900;
+    color: #3d5cff;
+    visibility: hidden;
+}
+
+.shareFacebook {
+
+    margin-bottom: 2rem;
+}
+
+/*Modals*/
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal__paragraph {
+    padding: 8px 8px 0 8px;
+}
+
+.modal__paragraph--error {
+    display: none;
+    color: red;
+}
+
+.modal__paragraph--highlighted {
+    font-weight: bold;
+}

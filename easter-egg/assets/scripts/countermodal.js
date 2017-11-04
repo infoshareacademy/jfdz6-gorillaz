@@ -1,3 +1,4 @@
+var runShowNumbers;
 $(document).ready(function () {
     const loadingDuration = 1000;
     let areNumbersVisible = false;
@@ -33,9 +34,11 @@ $(document).ready(function () {
         areNumbersVisible = true;
     }
 
-    $window.on('scroll', function () {
+    $window.on('load', function () {
         if (!areNumbersVisible && isInViewport($numbersRow)) showNumbers();
     });
 
     if (!areNumbersVisible && isInViewport($numbersRow)) showNumbers();
+
+    runShowNumbers = function(){ showNumbers(); }
 });
