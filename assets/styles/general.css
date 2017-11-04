@@ -169,53 +169,143 @@ a.navbar-brand {
 }
 
 /*Authors section*/
+.card__carousel {
+    padding: 15px;
+}
 
-.author-img {
-    width: 250px;
+.card__img {
+    width: 240px;
     height: auto;
     margin: 0 auto;
 }
 
 
-.thumbnail a{
+.card__info-wrapper {
+    padding: 10px;
+    text-align: center;
+}
+
+.card__header {
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.card__text {
+    font-size: 1.1em;
+}
+
+.card__text--muted {
+    color: #777;
+}
+
+.card__links-wrapper {
+    padding: 10px;
+    text-align: center;
+}
+
+.card__link,
+.card__link:hover,
+.card__link:focus{
     text-decoration: none;
 }
 
-.thumbnail a>img{
+.thumbnail a > img {
     display: inline-block;
-    width: 60px;
-    padding: 5px;
 }
 
-.thumbnail > .author-link-container{
+.card__link-img {
+    width: 60px;
+    padding: 8px;
+}
+
+.card__btn {
+    display: block;
+    margin: 0 auto;
     margin-bottom: 10px;
 }
-@media only screen and (min-width: 768px) {
 
-    .thumbnail {
-        height: 555px;
+@media only screen and (min-width: 768px) {
+    .card {
+        height: 600px;
         position: relative;
     }
 
-    .thumbnail > .author-link-container,
-    .thumbnail .btn{
-        margin-bottom: 0;
+    .card__links-wrapper,
+    .card__btn {
         position: absolute;
         left: 50%;
-        bottom: 30px;
         transform: translateX(-50%);
     }
 
-    .thumbnail > .author-link-container{
-        width: 200px;
+    .card__links-wrapper{
+        width: 330px;
         bottom: 20px;
+    }
+
+    .card__btn {
+        bottom: 30px;
     }
 }
 
 @media only screen and (min-width: 992px) {
+    .card {
+        height: 630px;
+    }
 
-    .thumbnail {
-        height: 600px;
+    .card__carousel {
+        position: relative;
+        height: 195px
+    }
+
+    .card__img {
+        width: 165px;
+    }
+
+    .card__img--generic {
+        position: absolute;
+        -webkit-transform: perspective(600px) rotateY(0deg);
+        transform: perspective(600px) rotateY(0deg);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+
+    .card__img--actual {
+        position: absolute;
+        -webkit-transform: perspective(600px) rotateY(180deg);
+        transform: perspective(600px) rotateY(180deg);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+
+    .card__carousel:hover > .card__img--generic {
+        -webkit-transform: perspective(600px) rotateY(-180deg);
+        transform: perspective(600px) rotateY(-180deg);
+    }
+
+    .card__carousel:hover > .card__img--actual {
+        -webkit-transform: perspective(600px) rotateY(0deg);
+        transform: perspective(600px) rotateY(0deg);
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .card__carousel {
+        height: 245px
+    }
+
+    .card__img {
+        width: 215px;
+    }
+}
+
+@media (max-width: 991px) {
+    .card__img--generic {
+        display: none;
     }
 }
 
@@ -361,11 +451,9 @@ a.navbar-brand {
     visibility: hidden;
 }
 
-
 /* shrink navbar */
 
-
-nav.shrink .navbar-nav>li>a {
+nav.shrink .navbar-nav > li > a {
     padding: 0.5em;
     transition: all 0.5s;
 }
@@ -373,14 +461,15 @@ nav.shrink .navbar-nav>li>a {
 nav.navbar.shrink {
     min-height: 0;
 }
+
 nav.shrink .navbar-brand {
     display: none;
 }
 
 /*animated paragraphs*/
 
-.staggered-animation{
-    opacity:0;
+.staggered-animation {
+    opacity: 0;
 }
 
 /*captcha resize*/
@@ -391,4 +480,27 @@ nav.shrink .navbar-brand {
     margin: 0 auto;
     transform-origin: right top;
     -webkit-transform-origin: right top;
+}
+
+/*Modal*/
+
+.modal-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #ff6f2f;
+}
+
+.modal__img {
+    margin: 0 auto;
+}
+
+.modal__paragraph {
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    padding-top: 8px;
+}
+
+.modal-footer {
+    text-align: center;
 }

@@ -1,5 +1,5 @@
 let DashboardComponent = function (statisticsService) {
-    const $statistics = $('.bar-item');
+    const $statistics = $('.dashboard__item');
     const $greeting = $statistics.find('#greeting');
     const $btnRestart = $statistics.find('#btnRestart');
     const $btnLogout = $statistics.find('#btnLogout');

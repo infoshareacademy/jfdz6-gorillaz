@@ -11,7 +11,7 @@ let BoardComponent = function (statisticsService) {
     ];
     let $onTableCard;
     let $flippedCard;
-    const $cards = $('.card');
+    const $cards = $('.board__card');
 
     function startGame() {
         const cardsRotationTime = 500;
@@ -65,10 +65,10 @@ let BoardComponent = function (statisticsService) {
                 const $selectedCards = [$onTableCard, $flippedCard];
 
                 if ($onTableCard.find('.hero-image').attr('src') === $flippedCard.find('.hero-image').attr('src')) {
-                    $selectedCards.forEach(($card) => $card.attr('disabled', 'disabled').css('cursor', 'not-allowed'));
                     statisticsService.guessHero();
                 } else {
-                    $selectedCards.forEach(($card) => $card.toggleClass('flipped'));
+                    $selectedCards.forEach(($card) =>
+                        $card.toggleClass('flipped').attr('disabled', false).css('cursor', 'pointer'));
                 }
 
                 $onTableCard = null;
@@ -80,7 +80,8 @@ let BoardComponent = function (statisticsService) {
 
         if ($(this).attr('disabled') !== 'disabled') {
             $flippedCard = $(this);
-            $flippedCard.toggleClass('flipped');
+            $flippedCard.toggleClass('flipped')
+                .attr('disabled', 'disabled').css('cursor', 'not-allowed');
 
             if (!$onTableCard) {
                 checkCards();
