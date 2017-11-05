@@ -94,7 +94,7 @@
     visibility: hidden;
 }
 
-/*IN PROGERS*/
+/*Instroction & Success Modal*/
 
 .modal-header {
     border: none;
@@ -136,19 +136,6 @@ a {
 
 a:hover {
     text-decoration: none;
-}
-
-.form-group {
-    width: 45%;
-    float: left;
-}
-
-.form-group:first-child {
-    margin-right: 10%;
-}
-
-.btn--login--modal {
-    width: 50%;
 }
 
 .game-score {
