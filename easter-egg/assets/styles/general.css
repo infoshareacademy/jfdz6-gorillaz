@@ -96,12 +96,26 @@
 
 /*Modals*/
 
-.modal-footer {
+.modal__header-wrapper {
+    padding: 15px 15px 5px;
+}
+
+.modal__header {
     text-align: center;
+    color: #ff6f2f;
+    font-size: 1.5em;
+}
+
+.modal-body {
+    padding: 15px 15px 5px;
+}
+
+.modal__section {
+    padding: 8px;
 }
 
 .modal__paragraph {
-    padding: 8px 8px 0 8px;
+    font-size: 1em;
 }
 
 .modal__paragraph--error {
@@ -110,5 +124,13 @@
 }
 
 .modal__paragraph--highlighted {
+    color: #ff6f2f;
+    font-size: 1.2em;
     font-weight: bold;
+}
+
+.modal-footer {
+    border: none;
+    padding: 5px 15px 15px;
+    text-align: center;
 }

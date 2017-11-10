@@ -170,38 +170,56 @@
 <div class="modal fade" id="modal-login" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Hi, please sign in or sign up</h4>
+            <div class="modal__header-wrapper">
+                <h4 class="modal__header">Hi, please sign in or sign up</h4>
             </div>
 
             <div class="modal-body">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username">
-                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Username must contain 5-7
-                        signs.</p>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username">
+                    </div>
+
+                    <div class="modal__section">
+                        <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Username must contain
+                            5-7
+                            signs.</p>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Password must contain 5-7
-                        alphanumerical signs.</p>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+
+                    <div class="modal__section">
+                        <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Password must contain
+                            5-7
+                            alphanumerical signs.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <div class="col-sm-8">
-                    <p class="modal__paragraph modal__paragraph--highlighted">Top 3 scores:</p>
-                    <p class="modal__paragraph" id="topScores"></p>
+                <div class="col-sm-6">
+                    <div class="modal__section">
+                        <p class="modal__paragraph modal__paragraph--highlighted">Top 3 scores:</p>
+                        <p class="modal__paragraph" id="topScores"></p>
+                    </div>
                 </div>
 
-                <div class="col-xs-6 col-sm-2">
-                    <button type="button" class="btn btn-primary" id="btn-sign-in">Sign in</button>
-                </div>
+                <div class="col-sm-6">
+                    <div class="modal__section">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-primary" id="btn-sign-in">Sign in</button>
+                        </div>
 
-                <div class="col-xs-6 col-sm-2">
-                    <button type="button" class="btn btn-primary" id="btn-sign-up">Sign up</button>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-primary" id="btn-sign-up">Sign up</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
