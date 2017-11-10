@@ -226,21 +226,30 @@
     </div>
 </div>
 
-<!-- Success Modal -->
-<div class="modal fade" id="successModal" role="dialog">
+<div class="modal fade" id="modal-success" role="dialog">
     <div class="modal-dialog">
-
-        <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Congratulations</h4>
+            <div class="modal__header-wrapper">
+                <h4 class="modal__header">Congratulations!</h4>
             </div>
+
             <div class="modal-body">
-                <p>You've won the game with the score <span class="game-score"></span></p>
+                <p class="modal__text--medium">You've won the game with the score</p>
+                <div class="modal__section">
+                    <p class="modal__text--very-large" id="game-score">0</p>
+                </div>
             </div>
+
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal__section">
+                    <div class="col-xs-6">
+                        <button type="button" class="btn btn-primary" id="btn-restart">Play again</button>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <button type="button" class="btn btn-primary" id="btn-log-out">Log out</button>
+                    </div>
+                </div>
             </div>
         </div>
 

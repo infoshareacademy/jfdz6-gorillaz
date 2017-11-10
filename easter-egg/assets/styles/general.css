@@ -129,6 +129,18 @@
     font-weight: bold;
 }
 
+.modal__text--medium {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.modal__text--very-large {
+    text-align: center;
+    color: #3d5cff;
+    font-size: 75px;
+    font-weight: 900;
+}
+
 .modal-footer {
     border: none;
     padding: 5px 15px 15px;

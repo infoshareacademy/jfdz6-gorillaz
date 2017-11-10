@@ -1,8 +1,10 @@
 let StatisticsService = function (httpsService, timerService) {
-    const totalHeroes = 8;
+    const totalHeroes = 2;
     let bestScore = 0;
+    let actualScore = 0;
     let guessed = 0;
     let attempts = 0;
+    let isNewBestScore = false;
 
     let madeAttempt = Observable();
     let guessedHero = Observable();
@@ -27,15 +29,18 @@ let StatisticsService = function (httpsService, timerService) {
         if (guessed === totalHeroes) {
             timerService.stopTimer();
             saveBestScore();
-            finishedGame.next(bestScore);
+            finishedGame.next({actualScore: actualScore, isNewBestScore: isNewBestScore});
         }
     }
 
     function saveBestScore() {
-        let actualScore = getResult();
+        actualScore = getResult();
 
-        bestScore = (actualScore > bestScore) ? actualScore : bestScore;
-        changedBestScore.next(bestScore);
+        if (actualScore > bestScore) {
+            bestScore = actualScore;
+            isNewBestScore = true;
+            changedBestScore.next(bestScore);
+        }
     }
 
     function getResult() {
@@ -62,6 +67,7 @@ let StatisticsService = function (httpsService, timerService) {
 
     function logoutUser() {
         timerService.stopTimer();
+        restartGame();
 
         httpsService.remove('/users/logout', {token: localStorage.token})
             .then(() => {
