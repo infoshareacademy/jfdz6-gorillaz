@@ -352,8 +352,14 @@ a.navbar-brand {
     background-color: #3d5cff;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+#btn-send-message.enabled:hover {
     color: #ff6f2f;
+}
+
+#btn-send-message:hover {
+    color: white;
+    background-color: #3d5cff;
 }
 
 /*Cookies*/
