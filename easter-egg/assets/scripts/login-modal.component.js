@@ -13,9 +13,9 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         localStorage.token = userData.token;
         statisticsService.setBestScore(userData.bestScore);
         statisticsService.retrievedUser.next(userData.username);
+        statisticsService.restartGame();
         statisticsService.loggedoutUser.subscribe(reloadLoginModal);
 
-        timerService.startTimer();
         $modalLogin.modal('hide');
     }
 

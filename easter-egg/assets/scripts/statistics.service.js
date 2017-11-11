@@ -56,18 +56,21 @@ let StatisticsService = function (httpsService, timerService) {
         return bestScore;
     }
 
-    function restartGame() {
+    function resetStatistics() {
         guessed = 0;
         attempts = 0;
         madeAttempt.next(attempts);
         guessedHero.next(guessed);
         restartedGame.next();
+    }
+
+    function restartGame() {
+        resetStatistics();
         timerService.restartTimer();
     }
 
     function logoutUser() {
         timerService.stopTimer();
-        restartGame();
 
         httpsService.remove('/users/logout', {token: localStorage.token})
             .then(() => {

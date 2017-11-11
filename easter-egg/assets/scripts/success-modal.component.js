@@ -16,7 +16,7 @@ let SuccessModalComponent = function (httpsService, statisticsService) {
     }
 
     function animateScore() {
-        const loadingDuration = 3000;
+        const loadingDuration = 2000;
 
         $gameScore.text(newScore);
 

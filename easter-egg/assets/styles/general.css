@@ -103,7 +103,7 @@
 .modal__header {
     text-align: center;
     color: #ff6f2f;
-    font-size: 1.5em;
+    font-size: 1.9em;
 }
 
 .modal-body {
@@ -131,10 +131,10 @@
 
 .modal__text--medium {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
-.modal__text--very-large {
+.modal__text--jumbo {
     text-align: center;
     color: #3d5cff;
     font-size: 75px;
