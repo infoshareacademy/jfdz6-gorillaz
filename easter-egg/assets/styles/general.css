@@ -114,18 +114,17 @@
     padding: 8px;
 }
 
-.modal__paragraph {
+.modal__text {
     font-size: 1em;
 }
 
-.modal__paragraph--error {
+.modal__text--error {
     display: none;
     color: red;
 }
 
-.modal__paragraph--highlighted {
+.modal__text--highlighted {
     color: #ff6f2f;
-    font-size: 1.2em;
     font-weight: bold;
 }
 

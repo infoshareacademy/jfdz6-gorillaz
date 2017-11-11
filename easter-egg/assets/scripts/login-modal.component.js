@@ -35,17 +35,17 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         let isInputCorrect = true;
 
         if (!isWordLengthCorrect($username)) {
-            $username.parent().parent().find('.modal__paragraph--error').show(showErrorThreshold);
+            $username.parent().parent().find('.modal__text--error').show(showErrorThreshold);
             isInputCorrect = false;
         } else {
-            $username.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
+            $username.siblings('.modal__text--error').hide(hideErrorThreshold);
         }
 
         if (!isWordLengthCorrect($password) || !isWordWithoutSpecialCharacters($password)) {
-            $password.parent().parent().find('.modal__paragraph--error').show(showErrorThreshold);
+            $password.parent().parent().find('.modal__text--error').show(showErrorThreshold);
             isInputCorrect = false;
         } else {
-            $password.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
+            $password.siblings('.modal__text--errorr').hide(hideErrorThreshold);
         }
 
         if (isInputCorrect) {
@@ -83,8 +83,8 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         $username.val('');
         $password.val('');
 
-        $username.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
-        $password.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
+        $username.siblings('.modal__text--error').hide(hideErrorThreshold);
+        $password.siblings('.modal__text--error').hide(hideErrorThreshold);
 
         getTopScores();
         $modalLogin.modal();
