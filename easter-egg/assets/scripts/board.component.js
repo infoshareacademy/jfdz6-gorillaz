@@ -95,5 +95,4 @@ let BoardComponent = function (statisticsService) {
     statisticsService.restartedGame.subscribe(startGame);
 
     $cards.on('click', onClickedCard);
-    startGame();
 };

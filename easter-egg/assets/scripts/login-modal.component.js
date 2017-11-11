@@ -13,9 +13,9 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         localStorage.token = userData.token;
         statisticsService.setBestScore(userData.bestScore);
         statisticsService.retrievedUser.next(userData.username);
+        statisticsService.restartGame();
         statisticsService.loggedoutUser.subscribe(reloadLoginModal);
 
-        timerService.startTimer();
         $modalLogin.modal('hide');
     }
 
@@ -35,14 +35,14 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
         let isInputCorrect = true;
 
         if (!isWordLengthCorrect($username)) {
-            $username.siblings('.modal__paragraph--error').show(showErrorThreshold);
+            $username.parent().parent().find('.modal__paragraph--error').show(showErrorThreshold);
             isInputCorrect = false;
         } else {
             $username.siblings('.modal__paragraph--error').hide(hideErrorThreshold);
         }
 
         if (!isWordLengthCorrect($password) || !isWordWithoutSpecialCharacters($password)) {
-            $password.siblings('.modal__paragraph--error').show(showErrorThreshold);
+            $password.parent().parent().find('.modal__paragraph--error').show(showErrorThreshold);
             isInputCorrect = false;
         } else {
             $password.siblings('.modal__paragraph--error').hide(hideErrorThreshold);

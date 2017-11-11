@@ -170,59 +170,86 @@
 <div class="modal fade" id="modal-login" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Hi, please sign in or sign up</h4>
+            <div class="modal__header-wrapper">
+                <h4 class="modal__header">Hi, please sign in or sign up</h4>
             </div>
 
             <div class="modal-body">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username">
-                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Username must contain 5-7
-                        signs.</p>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username">
+                    </div>
+
+                    <div class="modal__section">
+                        <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Username must contain
+                            5-7
+                            signs.</p>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                    <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Password must contain 5-7
-                        alphanumerical signs.</p>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+
+                    <div class="modal__section">
+                        <p class="modal__paragraph modal__paragraph--error">Incorrect input.<br>Password must contain
+                            5-7
+                            alphanumerical signs.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <div class="col-sm-8">
-                    <p class="modal__paragraph modal__paragraph--highlighted">Top 3 scores:</p>
-                    <p class="modal__paragraph" id="topScores"></p>
+                <div class="col-sm-6">
+                    <div class="modal__section">
+                        <p class="modal__paragraph modal__paragraph--highlighted">Top 3 scores:</p>
+                        <p class="modal__paragraph" id="topScores"></p>
+                    </div>
                 </div>
 
-                <div class="col-xs-6 col-sm-2">
-                    <button type="button" class="btn btn-primary" id="btn-sign-in">Sign in</button>
-                </div>
+                <div class="col-sm-6">
+                    <div class="modal__section">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-primary" id="btn-sign-in">Sign in</button>
+                        </div>
 
-                <div class="col-xs-6 col-sm-2">
-                    <button type="button" class="btn btn-primary" id="btn-sign-up">Sign up</button>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-primary" id="btn-sign-up">Sign up</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Success Modal -->
-<div class="modal fade" id="successModal" role="dialog">
+<div class="modal fade" id="modal-success" role="dialog">
     <div class="modal-dialog">
-
-        <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Congratulations</h4>
+            <div class="modal__header-wrapper">
+                <h4 class="modal__header">Congratulations!</h4>
             </div>
+
             <div class="modal-body">
-                <p>You've won the game with the score <span class="game-score"></span></p>
+                <p class="modal__text--medium">You've won the game with the score</p>
+                <div class="modal__section">
+                    <p class="modal__text--jumbo" id="game-score">0</p>
+                </div>
             </div>
+
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal__section">
+                    <div class="col-xs-6">
+                        <button type="button" class="btn btn-primary" id="btn-restart">Play again</button>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <button type="button" class="btn btn-primary" id="btn-log-out">Log out</button>
+                    </div>
+                </div>
             </div>
         </div>
 
