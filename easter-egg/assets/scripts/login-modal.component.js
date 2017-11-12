@@ -103,7 +103,7 @@ let LoginModalComponent = function (httpsService, statisticsService, timerServic
                     statisticsService.setBestScore(userBestScore.bestScore);
                     statisticsService.retrievedUser.next(userBestScore.username);
                     statisticsService.loggedoutUser.subscribe(reloadLoginModal);
-                    timerService.startTimer();
+                    statisticsService.restartGame();
                 });
         }
     }
