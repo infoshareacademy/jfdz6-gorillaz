@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+body {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+}
+
 /*Dashboard*/
 
 .dashboard {
@@ -103,7 +108,7 @@
 .modal__header {
     text-align: center;
     color: #ff6f2f;
-    font-size: 1.9em;
+    font-size: 2.5em;
 }
 
 .modal-body {
@@ -130,7 +135,7 @@
 
 .modal__text--medium {
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .modal__text--jumbo {
@@ -144,4 +149,26 @@
     border: none;
     padding: 5px 15px 15px;
     text-align: center;
+}
+
+/*Buttons*/
+
+.btn {
+    border: none;
+    font-family: "Gloria Hallelujah", cursive;
+    letter-spacing: 1px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:active, .btn-primary:focus {
+    background-color: #3d5cff;
+}
+
+.btn-primary:hover,
+#btn-send-message.enabled:hover {
+    color: #ff6f2f;
+}
+
+#btn-send-message:hover {
+    color: white;
+    background-color: #3d5cff;
 }
