@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+}
+
+/*Dashboard*/
+
+.dashboard {
+    background-color: #2196f3;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.dashboard__text {
+    font-size: 1.2em;
+    color: white;
+}
+
+.dashboard__text--highlighted {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.dashboard__btn {
+    background-color: #ffc107;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+}
+
+.dashboard__btn:not(:last-of-type) {
+    margin-right: 15px;
+}
+
+/*Board*/
+
+.board {
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.board__row {
+    max-width: 100vh;
+    margin: 0 auto;
+}
+
+.board__col {
+    padding: 5px;
+}
+
+@media (min-width: 768px) {
+    .board__col {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .dashboard,
+    .board__row {
+        max-width: 80vh;
+    }
+}
+
+.board__card {
+    -webkit-perspective: 800px;
+    transition: -webkit-transform .5s linear;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    cursor: pointer;
+}
+
+.hero-image, .blank-image, .fake-image {
+    display: block;
+}
+
+.blank-image, .hero-image {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+}
+
+.hero-image {
+    -webkit-transform: rotateY(180deg);
+}
+
+.board__card.flipped {
+    -webkit-transform: rotateY(180deg);
+}
+
+.fake-image {
+    visibility: hidden;
+}
+
+/*Modals*/
+
+.modal__header-wrapper {
+    padding: 15px 15px 5px;
+}
+
+.modal__header {
+    text-align: center;
+    color: #ff6f2f;
+    font-size: 2.5em;
+}
+
+.modal-body {
+    padding: 15px 15px 5px;
+}
+
+.modal__section {
+    padding: 8px;
+}
+
+.modal__text {
+    font-size: 1em;
+}
+
+.modal__text--error {
+    display: none;
+    color: red;
+}
+
+.modal__text--highlighted {
+    color: #ff6f2f;
+    font-weight: bold;
+}
+
+.modal__text--medium {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.modal__text--jumbo {
+    text-align: center;
+    color: #3d5cff;
+    font-size: 75px;
+    font-weight: 900;
+}
+
+.modal-footer {
+    border: none;
+    padding: 5px 15px 15px;
+    text-align: center;
+}
+
+/*Buttons*/
+
+.btn {
+    border: none;
+    font-family: "Gloria Hallelujah", cursive;
+    letter-spacing: 1px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:active, .btn-primary:focus {
+    background-color: #3d5cff;
+}
+
+.btn-primary:hover,
+#btn-send-message.enabled:hover {
+    color: #ff6f2f;
+}
+
+#btn-send-message:hover {
+    color: white;
+    background-color: #3d5cff;
+}
